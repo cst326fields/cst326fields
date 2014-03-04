@@ -1,46 +1,83 @@
-﻿/*
-    Below are styles for page structure.
-    Remove formatting from bootstrap.css or Site.css if styling conflicts.
-*/
+﻿/* Page layout */
 
-div.aes_body {
+div#container {
+
+    width: 80vw;
+    height: 95vh;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
     -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    margin: 20px;
     border: 5px solid #3790db;
-}
-
-div.aes_header {
-	height: 60px;
-    background-color: #3790db;
-	color: white;
-	font-size: x-large;
-    border: 1px solid #3790db;
-}
-
-div.aes_content {
-    padding: 10px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
     background-color: white;
-    border: 1px solid white;
+
 }
 
-/*
-    Below are styles for page elements.
-*/
+div#header {
 
-button.large {
-    border: none;
-	background-color: #73b8f5;
-	color: white;
-	text-decoration: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    padding:1em;
+    background-color: #296ca5;
+
 }
 
-button.large:hover {
+div#content {
+    
+    text-align: center;
+    padding: 0px;
+
+}
+
+div#footer {
+    margin: 0 auto;
+    position:absolute;
+	width:100%;
+	bottom:0;
+	background-color: #296ca5;
+}
+
+/* Page elements. */
+
+span.title {
+    padding-left: 10px;
+    letter-spacing: -2px;
+    color: white;
+    font-size: 150%;
+    text-align: left;
+    text-shadow: 0px 0px 10px #000000;
+}
+
+span.content_title {
+    color: gray;
+    font-size: 250%;
+}
+
+/* Navigation bar */
+
+#navcontainer ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#navcontainer ul li a {
+    border-radius: 10px;
+    padding: 0.5em 1.5em;
+    background-color: #e08e2a;
+    color: white;
     text-decoration: none;
-    background-color: white;
-    color: black;
+    font-size: large;
+}
+
+#navcontainer ul li a:hover {
+    background-color: #296ca5;
 }

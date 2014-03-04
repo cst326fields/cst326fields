@@ -239,6 +239,7 @@
     <Content Include="Views\Application\PersonalInfo.cshtml" />
     <Content Include="Views\Application\References.cshtml" />
     <Content Include="Views\Application\Index.cshtml" />
+    <Content Include="Views\Shared\_NavigationPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

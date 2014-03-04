@@ -24,8 +24,8 @@ namespace MVC_App
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css",
+                      /*"~/Content/bootstrap.css",*/
+                      /*"~/Content/site.css",*/
                       "~/Content/aes_styles.css"));
         }
     }
