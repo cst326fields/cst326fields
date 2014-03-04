@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Main Menu";
+}
+
+<h2>Index</h2>
+
+Welcome!
+
+<div>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+    </button>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Show Local Jobs", "LocalJobs", "Application")</li>
+        </ul>
+    </div>
+</div>
