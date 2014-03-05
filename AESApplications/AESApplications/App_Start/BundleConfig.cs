@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace AESApplications
+namespace MVC_App
 {
     public class BundleConfig
     {
@@ -24,8 +24,9 @@ namespace AESApplications
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                /*"~/Content/bootstrap.css",*/
+                /*"~/Content/site.css",*/
+                      "~/Content/aes_styles.css"));
         }
     }
 }
