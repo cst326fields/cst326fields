@@ -11,6 +11,7 @@ namespace AESApplications.Controllers
     {
         public ActionResult Welcome()
         {
+            ViewBag.RightButtonLink = "/LocalJobs/Index";
             return View();
         }
     }
