@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace AESApplications.Controllers
 {
-    public class PersonalInfoController : Controller
+    public class QuestionnaireController : Controller
     {
         //
-        // GET: /PersonalInfo/
+        // GET: /Questionnaire/
         public ActionResult Index()
         {
             return View();

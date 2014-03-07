@@ -169,6 +169,8 @@
     <Compile Include="Controllers\JobHistoryController.cs" />
     <Compile Include="Controllers\LocalJobsController.cs" />
     <Compile Include="Controllers\PersonalInfoController.cs" />
+    <Compile Include="Controllers\PhoneScreenController.cs" />
+    <Compile Include="Controllers\QuestionnaireController.cs" />
     <Compile Include="Controllers\ReferencesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -218,6 +220,8 @@
     <Content Include="Views\References\Index.cshtml" />
     <Content Include="Views\ESignature\Index.cshtml" />
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
+    <Content Include="Views\Questionnaire\Index.cshtml" />
+    <Content Include="Views\PhoneScreen\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

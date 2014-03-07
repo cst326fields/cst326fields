@@ -1,9 +1,9 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Local Jobs";
 }
 
-<h2>Local Jobs</h2>
+<h2>@ViewBag.Title</h2>
 
 <div>
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -11,7 +11,7 @@
     </button>
     <div class="navbar-collapse collapse">
         <ul>
-            <li>@Html.ActionLink("Show personal info form", "getJobs", "LocalJobs")</li>
+            <li>@Html.ActionLink("Show personal info form", "Index", "Questionnaire")</li>
         </ul>
     </div>
 </div>

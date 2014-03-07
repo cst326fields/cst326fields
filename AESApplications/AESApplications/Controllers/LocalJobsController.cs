@@ -15,10 +15,6 @@ namespace AESApplications.Controllers
             return View();
         }
 
-        public ActionResult getJobs()
-        {
-           
-            return new RedirectResult("/PersonalInfo/Index");
-        }
+   
 	}
 }
