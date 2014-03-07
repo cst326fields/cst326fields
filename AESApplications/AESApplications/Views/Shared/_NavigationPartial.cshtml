@@ -1,6 +1,15 @@
 ﻿<div id="navcontainer">
     <ul id="navlist">
-        <li style="float: left" id="leftNavButton" hidden="hidden"><a href=@ViewBag.LeftButtonLink>Back</a></li>
-        <li style="float: right" id="rightNavButton"><a href=@ViewBag.RightButtonLink>Next</a></li>
+
+        @if (ViewBag.LeftButtonLink != null && !ViewBag.LeftButtonLink.Equals(""))
+        {
+            <li style="float: left" id="leftNavButton" hidden="hidden"><a href=@ViewBag.LeftButtonLink>Back</a></li>
+        }
+
+        @if (ViewBag.RightButtonLink != null && !ViewBag.RightButtonLink.Equals(""))
+        {
+            <li style="float: right" id="rightNavButton"><a href=@ViewBag.RightButtonLink>Next</a></li>
+        }
+
     </ul>
 </div>
