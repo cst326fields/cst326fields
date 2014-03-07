@@ -9,8 +9,15 @@ namespace AESApplications.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Welcome()
+        public ActionResult Index()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Welcome(String storeId)
+        {
+            this.Session["StoreId"] = storeId;
             //ViewBag.RightButtonLink = "/LocalJobs/Index";
             return View();
         }

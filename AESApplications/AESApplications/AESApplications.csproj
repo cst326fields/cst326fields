@@ -222,6 +222,7 @@
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
     <Content Include="Views\Questionnaire\Index.cshtml" />
     <Content Include="Views\PhoneScreen\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -10,8 +10,6 @@
         @using (Html.BeginForm("Index", "Questionnaire", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
         {
             @Html.AntiForgeryToken()
-            <h4>Local Job Listings</h4>
-            <hr />
             @Html.ValidationSummary(true)
             <div class="form-group">
                 @foreach (string str in Model)
