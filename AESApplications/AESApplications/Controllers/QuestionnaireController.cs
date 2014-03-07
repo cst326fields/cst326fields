@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -10,9 +11,30 @@ namespace AESApplications.Controllers
     {
         //
         // GET: /Questionnaire/
-        public ActionResult Index()
+        [HttpPost]
+        public ActionResult Index(FormCollection fc )
         {
-            return View();
+            List<int> ids = new List<int>();
+            foreach (string fd in fc)
+            {
+                //add ids to list
+            } 
+            //call service and get questions model
+            return View(/*put questions model here*/);
         }
-	}
+        
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+     
