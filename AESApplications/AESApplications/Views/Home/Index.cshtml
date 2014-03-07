@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Kiosk startup</h2>
+
+<section>
+    @using (Html.BeginForm("Welcome", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.TextBox("storeId")
+        <input type="submit" value="Submit" class="btn btn-default" />    
+    }
+</section>
