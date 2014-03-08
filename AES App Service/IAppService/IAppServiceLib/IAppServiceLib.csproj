@@ -35,22 +35,96 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Applicant.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Applicant.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Applicant.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Applicant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Applicant.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Applicant.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Application.cs">
+      <DependentUpon>Applicant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AvailablePosition.cs">
+      <DependentUpon>Applicant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Education.cs">
+      <DependentUpon>Applicant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ElectronicSig.cs">
+      <DependentUpon>Applicant.tt</DependentUpon>
+    </Compile>
     <Compile Include="IAppService.cs" />
+    <Compile Include="JobHistory.cs">
+      <DependentUpon>Applicant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalInfo.cs">
+      <DependentUpon>Applicant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Position.cs">
+      <DependentUpon>Applicant.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AppService.cs" />
+    <Compile Include="Question.cs">
+      <DependentUpon>Applicant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reference.cs">
+      <DependentUpon>Applicant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Store.cs">
+      <DependentUpon>Applicant.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="Applicant.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Applicant.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Applicant.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Applicant.edmx</DependentUpon>
+      <LastGenOutput>Applicant.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Applicant.edmx.diagram">
+      <DependentUpon>Applicant.edmx</DependentUpon>
+    </None>
+    <None Include="Applicant.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Applicant.edmx</DependentUpon>
+      <LastGenOutput>Applicant.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
