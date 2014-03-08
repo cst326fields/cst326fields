@@ -20,7 +20,21 @@ namespace AESApplications.Controllers
                 //add ids to list
             } 
             //call service and get questions model
-            return View(/*put questions model here*/);
+            //fake model
+            List<string> questions = new List<string>(); //fake job listings
+            for (int i = 0; i < 4; i++)
+            {
+                questions.Add("Question 1 " + i.ToString());
+            }
+
+            return View(questions);
+        }
+
+        [HttpPost]
+        public ActionResult CheckQuestions(FormCollection fc)
+        {
+
+            return RedirectToAction("Index","PersonalInfo");
         }
         
     }
