@@ -1,9 +1,35 @@
 ﻿@{
     ViewBag.Title = "Questionnaire";
-    ViewBag.LeftButtonLink = "../LocalJobs/Index";
-    ViewBag.RightButtonLink = "../PersonalInfo/Index";
+    ViewBag.LeftButtonLink = "";
+    ViewBag.RightButtonLink = "";
 }
 
 <h2>@ViewBag.Title</h2>
 
-FORM GOES HERE
+<div>
+    <section id="loginForm">
+        @using (Html.BeginForm("CheckQuestions", "Questionnaire", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                @foreach (string str in Model)
+                {
+                    @str
+                    <br />
+                    @Html.Label("Yes");
+                    @Html.RadioButton(@str, 1);
+                    @Html.Label("No");
+                    @Html.RadioButton(@str, 0, true);
+                    <br />
+                }
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Apply" class="btn btn-default" />
+                </div>
+            </div>
+        }
+    </section>
+
+</div>

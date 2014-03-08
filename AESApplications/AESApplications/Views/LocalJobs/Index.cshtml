@@ -1,6 +1,8 @@
 ﻿@model List<string>
 @{
     ViewBag.Title = "Local Jobs";
+    ViewBag.LeftButtonLink = "";
+    ViewBag.RightButtonLink = "";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -15,6 +17,7 @@
                 @foreach (string str in Model)
                 {
                     @Html.CheckBox(str)
+                    @str
                     <br/>
                     <br/>                                                            
                 }
