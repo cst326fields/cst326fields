@@ -31,7 +31,6 @@ namespace AESApplications.Controllers
         [HttpPost]
         public ActionResult CheckQuestions(List<Question> questionnair)
         {
-
             bool questionFailed = false;
             if (questionFailed) {
                 //fail questionnair response

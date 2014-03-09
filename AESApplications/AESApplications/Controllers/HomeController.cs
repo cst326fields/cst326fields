@@ -20,5 +20,10 @@ namespace AESApplications.Controllers
             this.Session["StoreId"] = storeId;
             return View();
         }
+
+        public ActionResult Welcome()
+        {
+            return View();
+        }
     }
 }

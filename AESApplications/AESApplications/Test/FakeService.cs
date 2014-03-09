@@ -62,11 +62,15 @@ namespace AESApplications.Test
         {
             var allQuestions = new List<Question>();
             var q1 = new Question();
+            var q2 = new Question();
 
             q1.question = "Can you lift over 25 pounds on a regular basis?";
             q1.correctAnswer = "Yes";
+            q2.question = "Can you work on weekends?";
+            q2.correctAnswer = "Yes";
 
             allQuestions.Add(q1);
+            allQuestions.Add(q2);
 
             return allQuestions;
         }
