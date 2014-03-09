@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<AESApplications.Test.Question>
+
+@{
     ViewBag.Title = "Questionnaire";
     ViewBag.LeftButtonLink = "";
     ViewBag.RightButtonLink = "";
@@ -8,19 +10,17 @@
 
 <div>
     <section id="loginForm">
-        @using (Html.BeginForm("CheckQuestions", "Questionnaire", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-        {
-            @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true)
+        @using (Html.BeginForm("CheckQuestions", "Questionnaire", FormMethod.Post))
+        { 
             <div class="form-group">
-                @foreach (string str in Model)
+                @for (int i = 0; i < Model.Count; i++ )
                 {
-                    @str
-                    <br />
+                    <p>@Model[i].question</p>
                     @Html.Label("Yes");
-                    @Html.RadioButton(@str, 1);
+                    @Html.RadioButtonFor(model => model[i].response, "Yes");
                     @Html.Label("No");
-                    @Html.RadioButton(@str, 0, true);
+                    @Html.RadioButtonFor(model => model[i].response, "No");
+                    <br />
                     <br />
                 }
             </div>

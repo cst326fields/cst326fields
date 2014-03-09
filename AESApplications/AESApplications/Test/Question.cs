@@ -9,5 +9,6 @@ namespace AESApplications.Test
     {
         public string question { get; set; }
         public string correctAnswer { get; set; }
+        public string response { get; set; }
     }
 }
