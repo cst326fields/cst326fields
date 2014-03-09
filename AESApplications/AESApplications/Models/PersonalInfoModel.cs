@@ -38,16 +38,16 @@ namespace AESApplications.Models
         [Required]
         [Display(Name = "Zipcode")]
         [DataType(DataType.PostalCode)]
-        public int zip { get; set; }
+        public string zip { get; set; }
 
         [Required]
         [Display(Name = "Phone")]
         [DataType(DataType.PhoneNumber)]
-        public int phone_num { get; set; }
+        public string phone_num { get; set; }
 
         [Required]
         [Display(Name = "SSN#")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:###-##-####}")]
-        public int ssn { get; set; }
+        public string ssn { get; set; }
     }
 }
