@@ -1,4 +1,5 @@
-﻿@model List<string>
+﻿@model List<AESApplications.Test.Job>
+
 @{
     ViewBag.Title = "Local Jobs";
     ViewBag.LeftButtonLink = "";
@@ -14,10 +15,13 @@
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true)
             <div class="form-group">
-                @foreach (string str in Model)
+                @foreach (AESApplications.Test.Job job in Model)
                 {
-                    @Html.CheckBox(str)
-                    @str
+                    <p>@Html.CheckBox(job.jobId.ToString())  Position: @job.title      Location: @job.location </p>
+                    <p>Description @job.description</p>
+                    <p>Hours: @job.hours</p>
+                    <p>Education Requirement: @job.education</p>
+                    <p>Responsibilities and requirements: @job.requirements</p>
                     <br/>
                     <br/>                                                            
                 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AESApplications.Test;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,11 +14,8 @@ namespace AESApplications.Controllers
         // GET: /LocalJobs/
         public ActionResult Index()
         {
-            //service call to get list of local jobs heres//
-            List<string> jobs = new List<string>(); //fake job listings
-            for(int i = 0; i < 4; i++) {
-                jobs.Add("Job listing " + i.ToString());
-            }
+            var fakeServ = new FakeService();
+            List<Job> jobs = fakeServ.getLocalJobs(Convert.ToInt32(this.Session["storeId"]));
 
             return View(jobs);
         }
