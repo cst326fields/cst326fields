@@ -1,9 +1,20 @@
 ﻿@{
     ViewBag.Title = "E-Signature";
-    ViewBag.LeftButtonLink = "../References/Index";
-    ViewBag.RightButtonLink = "../PhoneScreen/Index";
+    ViewBag.LeftButtonLink = "";
+    ViewBag.RightButtonLink = "";
 }
 
-<h2>@ViewBag.Title</h2>
+<span class="content_title">
+    <br />
+    <br />
+    Click here if you verify all information provided is accurate.
+    <br />
+    <br />
+    <br />
+</span>
 
-FORM GOES HERE
+<div id="navcontainer">
+    <ul>
+        <li>@Html.ActionLink("I agree", "ApplicationFinished", "ESignature")</li>
+    </ul>
+</div>

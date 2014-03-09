@@ -14,5 +14,11 @@ namespace AESApplications.Controllers
         {
             return View();
         }
+
+        public ActionResult ApplicationFinished()
+        {
+            //save the responce to esignature
+            return RedirectToAction("Index", "PhoneScreen");
+        }
 	}
 }
