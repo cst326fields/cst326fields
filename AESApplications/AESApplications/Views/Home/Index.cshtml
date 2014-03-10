@@ -1,15 +1,22 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    ViewBag.Title = "Kiosk Start";
 }
 
-<h2>Kiosk startup</h2>
+<div style="text-align: center;">
 
-<section>
-    @using (Html.BeginForm("Welcome", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    <span class="content_header">Enter Store ID #</span>
+    
+    <br />
+
+    <hr class="header" />
+
+    <br />
+
+    @using (Html.BeginForm("Welcome", "Home", FormMethod.Post, new { role = "form" }))
     {
         @Html.AntiForgeryToken()
-        @Html.TextBox("storeId")
-        <input type="submit" value="Submit" class="btn btn-default" />    
+        @Html.TextBox("storeId", null, new { placeholder = "Store Id #", @id = "textfield" })
+        <input type="submit" value="Continue" />
     }
-</section>
+
+</div>

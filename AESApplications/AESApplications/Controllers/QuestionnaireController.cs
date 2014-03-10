@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AESApplications.Test;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,31 +10,31 @@ namespace AESApplications.Controllers
 {
     public class QuestionnaireController : Controller
     {
-        //
+         //
         // GET: /Questionnaire/
         [HttpPost]
         public ActionResult Index(FormCollection fc )
         {
+            List<Question> questions;
+            var fakeServ = new FakeService();
+
             List<int> ids = new List<int>();
-            foreach (string fd in fc)
+            for (int i = 1; i < fc.Count; i++ )
             {
-                //add ids to list
-            } 
-            //call service and get questions model
-            //fake model
-            List<string> questions = new List<string>(); //fake job listings
-            for (int i = 0; i < 4; i++)
-            {
-                questions.Add("Question 1 " + i.ToString());
+                 ids.Add(Convert.ToInt32(fc.Keys.Get(i)));
             }
+            questions = fakeServ.getQuestions(ids);
 
             return View(questions);
         }
 
         [HttpPost]
-        public ActionResult CheckQuestions(FormCollection fc)
+        public ActionResult CheckQuestions(List<Question> questionnair)
         {
-
+            bool questionFailed = false;
+            if (questionFailed) {
+                //fail questionnair response
+            }
             return RedirectToAction("Index","PersonalInfo");
         }
         

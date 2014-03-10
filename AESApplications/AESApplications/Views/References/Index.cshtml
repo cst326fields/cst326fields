@@ -1,9 +1,45 @@
-﻿@{
+﻿@model List<AESApplications.Models.ReferenceModel>
+
+@{
     ViewBag.Title = "References";
-    ViewBag.LeftButtonLink = "../Education/Index";
-    ViewBag.RightButtonLink = "../ESignature/Index";
+    ViewBag.LeftButtonLink = "../Home/Welcome";
+    ViewBag.RightButtonLink = "";
 }
 
 <h2>@ViewBag.Title</h2>
 
-FORM GOES HERE
+<section>
+    @using (Html.BeginForm("Index", "References", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        for (int i = 0; i < Model.Count; i++)
+        {
+            <div>
+                @Html.LabelFor(m => m[i].name)
+                @Html.TextBoxFor(m => m[i].name)
+                @Html.ValidationMessageFor(m => m[i].name)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].phone)
+                @Html.TextBoxFor(m => m[i].phone)
+                @Html.ValidationMessageFor(m => m[i].phone)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].company)
+                @Html.TextBoxFor(m => m[i].company)
+                @Html.ValidationMessageFor(m => m[i].company)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].title)
+                @Html.TextBoxFor(m => m[i].title)
+                @Html.ValidationMessageFor(m => m[i].title)
+            </div>
+            <br />
+        }
+        <br />
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Submit" class="btn btn-default" />
+        </div>
+    }
+</section>

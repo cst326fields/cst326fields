@@ -1,15 +1,21 @@
-﻿<div id="navcontainer">
-    <ul id="navlist">
+﻿<div style="display: table-cell">
 
-        @if (ViewBag.LeftButtonLink != null && !ViewBag.LeftButtonLink.Equals(""))
-        {
-            <li style="float: left" id="leftNavButton"><a href=@ViewBag.LeftButtonLink>Back</a></li>
-        }
+    @if (ViewBag.LeftButtonLink != null && !ViewBag.LeftButtonLink.Equals(""))
+    {
+        <form action="@ViewBag.LeftButtonLink" method="get">
+            <input type="submit" value="Go to Previous Form" name="Back" />
+        </form>
+    }
 
-        @if (ViewBag.RightButtonLink != null && !ViewBag.RightButtonLink.Equals(""))
-        {
-            <li style="float: right" id="rightNavButton"><a href=@ViewBag.RightButtonLink>Next</a></li>
-        }
+</div>
 
-    </ul>
+<div style="display: table-cell">
+
+    @if (ViewBag.RightButtonLink != null && !ViewBag.RightButtonLink.Equals(""))
+    {
+        <form action="@ViewBag.RightButtonLink" method="get">
+            <input type="submit" value="Go to Next Form" name="Next" />
+        </form>
+    }
+
 </div>

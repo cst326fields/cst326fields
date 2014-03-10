@@ -1,9 +1,92 @@
-﻿@{
+﻿@model List<AESApplications.Models.JobHistoryModel>
+
+@{
     ViewBag.Title = "Job History";
-    ViewBag.LeftButtonLink = "../PersonalInfo/Index";
-    ViewBag.RightButtonLink = "../Education/Index";
+    ViewBag.LeftButtonLink = "../Home/Welcome";
+    ViewBag.RightButtonLink = "";
 }
 
 <h2>@ViewBag.Title</h2>
 
-FORM GOES HERE
+<section>
+    @using (Html.BeginForm("Index", "JobHistory", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        for (int i = 0; i < Model.Count; i++)
+        {
+            <div>
+                @Html.LabelFor(m => m[i].employer)
+                @Html.TextBoxFor(m => m[i].employer)
+                @Html.ValidationMessageFor(m => m[i].employer)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].street)
+                @Html.TextBoxFor(m => m[i].street)
+                @Html.ValidationMessageFor(m => m[i].street)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].city)
+                @Html.TextBoxFor(m => m[i].city)
+                @Html.ValidationMessageFor(m => m[i].city)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].state)
+                @Html.TextBoxFor(m => m[i].state)
+                @Html.ValidationMessageFor(m => m[i].state)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].position)
+                @Html.TextBoxFor(m => m[i].position)
+                @Html.ValidationMessageFor(m => m[i].position)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].reason_for_leaving)
+                @Html.TextAreaFor(m => m[i].reason_for_leaving)
+                @Html.ValidationMessageFor(m => m[i].reason_for_leaving)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].from_month)
+                @Html.TextBoxFor(m => m[i].from_month) / @Html.TextBoxFor(m => m[i].from_year)
+                @Html.ValidationMessageFor(m => m[i].from_month)
+                @Html.ValidationMessageFor(m => m[i].from_year)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].to_month)
+                @Html.TextBoxFor(m => m[i].to_month) / @Html.TextBoxFor(m => m[i].to_year)
+                @Html.ValidationMessageFor(m => m[i].to_month)
+                @Html.ValidationMessageFor(m => m[i].to_year)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].phone)
+                @Html.TextBoxFor(m => m[i].phone)
+                @Html.ValidationMessageFor(m => m[i].phone)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].supervisor)
+                @Html.TextBoxFor(m => m[i].supervisor)
+                @Html.ValidationMessageFor(m => m[i].supervisor)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].salary_start)
+                @Html.TextBoxFor(m => m[i].salary_start)
+                @Html.ValidationMessageFor(m => m[i].salary_start)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].salary_end)
+                @Html.TextBoxFor(m => m[i].salary_end)
+                @Html.ValidationMessageFor(m => m[i].salary_end)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].responsibilities)
+                @Html.TextAreaFor(m => m[i].responsibilities)
+                @Html.ValidationMessageFor(m => m[i].responsibilities)
+            </div>
+            <br />
+        }
+        <br />
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Submit" class="btn btn-default" />
+        </div>
+    }
+</section>

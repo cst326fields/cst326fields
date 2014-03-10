@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AESApplications.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +13,23 @@ namespace AESApplications.Controllers
         // GET: /References/
         public ActionResult Index()
         {
-            return View();
+            var model = new List<ReferenceModel>();
+            for (int i = 0; i < 3; i++)
+            {
+                model.Add(new ReferenceModel());
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Index(List<ReferenceModel> model)
+        {
+            if (ModelState.IsValid)
+            {
+                //save the form here
+                return RedirectToAction("Index", "ESignature");
+            }
+            return View(model);
         }
 	}
 }
