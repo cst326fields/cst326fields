@@ -6,32 +6,48 @@
     ViewBag.RightButtonLink = "";
 }
 
-<h2>@ViewBag.Title</h2>
+<div style="text-align: center; margin: 20px;">
 
-<div>
-    <section id="loginForm">
-        @using (Html.BeginForm("Index", "Questionnaire", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    <br />
+    <br />
+
+    <span class="content_header">@ViewBag.Title</span>
+
+    <br />
+    <br />
+
+    @using (Html.BeginForm("Index", "Questionnaire", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        foreach (AESApplications.Test.Job job in Model)
         {
-            @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true)
-            <div class="form-group">
-                @foreach (AESApplications.Test.Job job in Model)
-                {
-                    <p>@Html.CheckBox(job.jobId.ToString())  Position: @job.title      Location: @job.location </p>
-                    <p>Description @job.description</p>
-                    <p>Hours: @job.hours</p>
-                    <p>Education Requirement: @job.education</p>
-                    <p>Responsibilities and requirements: @job.requirements</p>
-                    <br/>
-                    <br/>                                                            
-                }
-            </div>
-            <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Apply" class="btn btn-default" />
-                    </div>
+            <div id="position-container">
+
+                <div id="position-header">
+                    Position: @job.title      Location: @job.location
+                </div>
+
+                <div id="position-header">
+                    <input type="checkbox" id="@job.jobId" value="@job.jobId.ToString()" />
+                </div>
+
+                <div id="position-body">
+                    <ul>
+                        <li>Description<ul><li>@job.description</li></ul></li>
+                        <li>Hours<ul><li>@job.hours</li></ul></li>
+                        <li>Education Requirement<ul><li>@job.education</li></ul></li>
+                        <li>Responsibilities and Requirements<ul><li>@job.requirements</li></ul></li>
+                    </ul>
+                </div>
+
             </div>
         }
-    </section>
+
+        <br />
+
+        <input type="submit" value="Apply" />
+    }
 
 </div>

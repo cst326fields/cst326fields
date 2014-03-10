@@ -2,20 +2,17 @@
     ViewBag.Title = "Main Menu";
 }
 
-<span class="content_title">
-    <br />
-    <br />
-    <br />
-    <br />
-    Welcome to the A.E.S. Job Application Kiosk. @ViewBag.stuff
-    <br />
-    Select an option below to begin.
-    <br />
-    <br />
-</span>
+<div style="text-align: center;">
 
-<div id="navcontainer">
-    <ul>
-        <li>@Html.ActionLink("Show Local Jobs", "Index", "LocalJobs")</li>
-    </ul>
+    <span class="content_header">Welcome to the A.E.S. Job Application Kiosk.<br />Select an option below to begin.</span>
+
+    <br />
+    <br />
+    <br />
+
+    @using (Html.BeginForm("Index", "LocalJobs", FormMethod.Post, new { role = "form" }))
+    {
+        <input type="submit" value="Show Local Jobs" />
+    }
+
 </div>
