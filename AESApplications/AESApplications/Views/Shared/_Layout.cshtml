@@ -14,19 +14,19 @@
     <div id="container">
 
         <div id="header">
-            <span class="title">A.E.S. Job Application Kiosk</span>
+            <div style="margin: 20px;">A.E.S. Job Application Kiosk</div>
         </div>
 
         <div id="content">
-            @RenderBody()
+            <div style="margin: 20px; display: table-cell; vertical-align: middle">@RenderBody()</div>
         </div>
 
         <div id="navigation">
-            @Html.Partial("_NavigationPartial")
+            <div style="margin: 20px;">@Html.Partial("_NavigationPartial")</div>
         </div>
 
         <div id="footer">
-            <p style="text-align: center; color: white">&copy; @DateTime.Now.Year - A.E.S. Incorporated</p>
+            <div style="margin: 20px;">&copy; @DateTime.Now.Year - A.E.S. Incorporated</div>
         </div>
 
     </div>
