@@ -127,7 +127,7 @@ div#position-container:hover {
 
 div.position-toggleable {
 
-               padding: 10px;
+               padding: 5px;
                display: table-cell;
         vertical-align: middle;
 
@@ -148,10 +148,29 @@ div.position-detail-content {
 
                display: table-cell;
             text-align: left;
-                margin: 10px;
+               padding: 10px;
       background-color: white;
-               padding: 0 10px 0 10px;
                  color: gray;
+
+}
+
+div.position-detail-partial-title {
+
+               display: table-cell;
+                 color: white;
+             font-size: 1.25em;
+               padding: 0 5px 5px 5px;
+            text-align: left;
+
+}
+
+div.position-detail-partial-content {
+
+               display: table-cell;
+      background-color: white;
+                 color: gray;
+            text-align: left;
+               padding: 5px;
 
 }
 

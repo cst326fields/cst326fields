@@ -33,19 +33,36 @@
 
                         <div style="display: table;">
 
-                            <div style="display: table-row;">
-                                <div class="position-detail-title">Store Location</div>
-                                <div class="position-detail-content">@job.location</div>
+                            <div style="display: table-row">
+
+                                <div class="position-detail-partial-title" style="width: 150px;">
+                                    Store Location
+                                </div>
+
+                                <div class="position-detail-partial-title" style="width: 150px;">
+                                    Job Title
+                                </div>
+
+                                <div class="position-detail-partial-title">
+                                    Description
+                                </div>
+
                             </div>
 
-                            <div style="display: table-row;">
-                                <div class="position-detail-title">Job Title</div>
-                                <div class="position-detail-content">@job.title</div>
-                            </div>
+                            <div style="display: table-row">
 
-                            <div style="display: table-row;">
-                                <div class="position-detail-title">Description</div>
-                                <div class="position-detail-content">@job.description.Substring(0, 100)...</div>
+                                <div class="position-detail-partial-content" style="width: 150px;">
+                                    @job.location
+                                </div>
+
+                                <div class="position-detail-partial-content" style="width: 150px;">
+                                    @job.title
+                                </div>
+
+                                <div class="position-detail-partial-content">
+                                    @job.description.Substring(0, 100)...
+                                </div>
+
                             </div>
 
                         </div>
@@ -108,11 +125,11 @@
 
     <script>
 
-        $('.position-toggleable')
+      $('.position-toggleable')
       .css('cursor', 'default')
       .click(
         function () {
-            $(this).children().toggle();
+            $(this).children().slideToggle('fast');
         }
       )
 
