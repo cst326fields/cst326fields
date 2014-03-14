@@ -106,7 +106,7 @@
             <div style="display: table-row;">
                 <div class="form-title">@Html.LabelFor(m => m.ssn)</div>
                 <div class="form-content">
-                    @Html.TextBoxFor(m => m.ssn, new { Class = "field-input", style = "width: 150px;", onchange = "UpdateField(this);" })
+                    @Html.TextBoxFor(m => m.ssn, new { Class = "field-input", style = "width: 150px;" })
                     <br />
                     <div id="validation">@Html.ValidationMessageFor(m => m.ssn)</div>
                 </div>
