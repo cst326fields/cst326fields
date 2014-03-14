@@ -179,6 +179,7 @@
     </Compile>
     <Compile Include="Models\EducationModel.cs" />
     <Compile Include="Models\JobHistoryModel.cs" />
+    <Compile Include="Models\JobModel.cs" />
     <Compile Include="Models\PersonalInfoModel.cs" />
     <Compile Include="Models\ReferenceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AESApplications.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,12 +8,12 @@ namespace AESApplications.Test
 {
     public class FakeService
     {
-        public List<FakeJob> getLocalJobsTest(int storeid)
+        public List<JobModel> getLocalJobsTest(int storeid)
         {
-            var allJobs = new List<FakeJob>();
-            FakeJob job1 = new FakeJob();
-            FakeJob job2 = new FakeJob();
-            FakeJob job3 = new FakeJob();
+            var allJobs = new List<JobModel>();
+            var job1 = new JobModel();
+            var job2 = new JobModel();
+            var job3 = new JobModel();
 
             job1.jobId = 1;
             job1.title = "Cashier";
