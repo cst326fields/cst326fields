@@ -7,12 +7,12 @@ namespace AESApplications.Test
 {
     public class FakeService
     {
-        public List<Job> getLocalJobs(int storeid)
+        public List<FakeJob> getLocalJobsTest(int storeid)
         {
-            var allJobs = new List<Job>();
-            Job job1 = new Job();
-            Job job2 = new Job();
-            Job job3 = new Job();
+            var allJobs = new List<FakeJob>();
+            FakeJob job1 = new FakeJob();
+            FakeJob job2 = new FakeJob();
+            FakeJob job3 = new FakeJob();
 
             job1.jobId = 1;
             job1.title = "Cashier";
@@ -58,11 +58,11 @@ namespace AESApplications.Test
             return allJobs;
         }
 
-        public List<Question> getQuestions(List<int> jobIds)
+        public List<FakeQuestion> getQuestionsTest(List<int> jobIds)
         {
-            var allQuestions = new List<Question>();
-            var q1 = new Question();
-            var q2 = new Question();
+            var allQuestions = new List<FakeQuestion>();
+            var q1 = new FakeQuestion();
+            var q2 = new FakeQuestion();
 
             q1.question = "Can you lift over 25 pounds on a regular basis?";
             q1.correctAnswer = "Yes";
@@ -75,32 +75,32 @@ namespace AESApplications.Test
             return allQuestions;
         }
 
-        public int storePersonalInfo(object personalInfo)
+        public int storePersonalInfoTest(object personalInfo)
         {
             return 321;
         }
 
-        public bool storeJobHistory(object jobHistory)
+        public bool storeJobHistoryTest(object jobHistory)
         {
             return true;
         }
 
-        public bool storeEducation(object education) 
+        public bool storeEducationTest(object education) 
         {
             return true;
         }
 
-        public bool storeReferences(object references)
+        public bool storeReferencesTest(object references)
         {
             return true;
         }
 
-        public bool finalizeApplication(object eSignature)
+        public bool finalizeApplicationTest(object eSignature)
         {
             return true;
         }
 
-        public string getPhoneScreenInstructions(int applicantId)
+        public string getPhoneScreenInstructionsTest(int applicantId)
         {
             return "please dial 1-800-1TO-HIRE";
         }

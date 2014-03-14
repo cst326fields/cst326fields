@@ -5,7 +5,7 @@ using System.Web;
 
 namespace AESApplications.Test
 {
-    public class Job
+    public class FakeJob
     {
         public string title { get; set; }
         public string location { get; set; }

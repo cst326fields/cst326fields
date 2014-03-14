@@ -1,4 +1,5 @@
-﻿using AESApplications.Test;
+﻿using AESApplications.ServiceReference1;
+using AESApplications.Test;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,9 @@ namespace AESApplications.Controllers
         public ActionResult Index()
         {
             var fakeServ = new FakeService();
-            List<Job> jobs = fakeServ.getLocalJobs(Convert.ToInt32(this.Session["storeId"]));
+            List<FakeJob> jobs = fakeServ.getLocalJobsTest(Convert.ToInt32(this.Session["storeId"]));
+
+            
 
             return View(jobs);
         }

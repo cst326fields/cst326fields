@@ -5,7 +5,7 @@ using System.Web;
 
 namespace AESApplications.Test
 {
-    public class Question
+    public class FakeQuestion
     {
         public string question { get; set; }
         public string correctAnswer { get; set; }

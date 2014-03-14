@@ -15,7 +15,7 @@ namespace AESApplications.Controllers
         [HttpPost]
         public ActionResult Index(FormCollection fc )
         {
-            List<Question> questions;
+            List<FakeQuestion> questions;
             var fakeServ = new FakeService();
 
             List<int> ids = new List<int>();
@@ -23,13 +23,13 @@ namespace AESApplications.Controllers
             {
                  ids.Add(Convert.ToInt32(fc.Keys.Get(i)));
             }
-            questions = fakeServ.getQuestions(ids);
+            questions = fakeServ.getQuestionsTest(ids);
 
             return View(questions);
         }
 
         [HttpPost]
-        public ActionResult CheckQuestions(List<Question> questionnair)
+        public ActionResult CheckQuestions(List<FakeQuestion> questionnair)
         {
             bool questionFailed = false;
             if (questionFailed) {

@@ -1,4 +1,4 @@
-﻿@model List<AESApplications.Test.Job>
+﻿@model List<AESApplications.Test.FakeJob>
 
 @{
     ViewBag.Title = "Local Jobs";
@@ -21,7 +21,7 @@
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
 
-        foreach (AESApplications.Test.Job job in Model)
+        foreach (var job in Model)
         {
             <div id="position-container">
 
