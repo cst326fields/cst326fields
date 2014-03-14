@@ -6,13 +6,7 @@
 
 <div style="text-align: center; margin: 20px;">
 
-    <br />
-    <br />
-
-    <span class="content_header">@ViewBag.Title</span>
-
-    <br />
-    <br />
+    <div class="content-header">@ViewBag.Title</div>
 
     @using (Html.BeginForm("Index", "PersonalInfo", FormMethod.Post))
     {
@@ -20,7 +14,7 @@
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
 
-        <div id="form-container">
+        <div id="form-container" class="box-shadow">
 
             <div style="display: table-row;">
                 <div class="form-title">@Html.LabelFor(m => m.name_first)</div>
@@ -114,9 +108,7 @@
 
         </div>
 
-        <br />
-
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Continue" />
         
     }
 

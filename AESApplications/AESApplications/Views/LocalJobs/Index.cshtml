@@ -6,15 +6,9 @@
 
 <div style="text-align: center; margin: 20px;">
 
-    <br />
-    <br />
+    <div class="content-header">@ViewBag.Title</div>
 
-    <span class="content_header">@ViewBag.Title</span>
-
-    <br />
-    <br />
-
-    <h2 style="color: gray; font-size: 1.25em;">Click a job position to show or hide details.</h2>
+    <div class="content-subheader">Click a job position to show or hide details.</div>
 
     @using (Html.BeginForm("Index", "Questionnaire", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
     {
@@ -23,7 +17,7 @@
 
         foreach (var job in Model)
         {
-            <div id="position-container">
+            <div id="position-container" class="box-shadow">
 
                 <div class="position-toggleable">
 
@@ -107,7 +101,7 @@
 
                 </div>
 
-                <div class="position-apply">
+                <div class="position-apply text-shadow">
                     <input type="checkbox" id="@job.jobId" value="@job.jobId.ToString()" />
                     <br />
                     Add
@@ -115,8 +109,6 @@
 
             </div>
         }
-
-        <br />
 
         <input type="submit" value="Apply" />
     }

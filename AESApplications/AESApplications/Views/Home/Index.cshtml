@@ -4,18 +4,12 @@
 
 <div style="text-align: center;">
 
-    <span class="content_header">Enter Store ID #</span>
-    
-    <br />
-
-    <hr class="header" />
-
-    <br />
+    <div class="content-header">Enter Store ID #</div>
 
     @using (Html.BeginForm("Welcome", "Home", FormMethod.Post, new { role = "form" }))
     {
         @Html.AntiForgeryToken()
-        @Html.TextBox("storeId", null, new { placeholder = "Store Id #", @id = "textfield" })
+        @Html.TextBox("storeId", null, new { placeholder = "Store Id #", @id = "storeid-textfield" })
         <input type="submit" value="Continue" />
     }
 

@@ -1,4 +1,19 @@
-﻿/* Page layout */
+﻿/* Shared styles */
+
+.box-shadow {
+
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+       -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+
+}
+
+.background-orange { background-color: #e08e2a; }
+.background-blue { background-color: #3790db; }
+.background-dark-blue { background-color: #296ca5; }
+.text-shadow { text-shadow: 0px 0px 10px #000000; }
+
+/* Page layout */
 
 div#container {
 
@@ -6,9 +21,6 @@ div#container {
                 margin: 0 auto;
             min-height: 96vh;
                  width: 80vw;
-    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-       -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
          border-radius: 10px;
                 border: 5px solid #3790db;
       background-color: white;
@@ -22,7 +34,6 @@ div#header {
       background-color: #296ca5;
         letter-spacing: -1.5px;
              font-size: 150%;
-           text-shadow: 0px 0px 10px #000000;
 
 }
 
@@ -52,10 +63,22 @@ div#footer {
 
 /* Page elements. */
 
-span.content_header {
+div.content-header {
+
+                 color: #296ca5;
+             font-size: 235%;
+                 width: 70%;
+                margin: 0 auto 40px auto;
+                height: 10px;
+        padding-bottom: 40px;
+         border-bottom: 4px solid #e08e2a;
+
+}
+
+div.content-subheader {
 
                  color: gray;
-             font-size: 250%;
+             font-size: 200%;
 
 }
 
@@ -70,6 +93,7 @@ input[type=submit], input[type=button] {
              font-size: large;
                outline: none;
                 border: none;
+            margin-top: 40px;
 
 }
 
@@ -86,7 +110,7 @@ input[type=checkbox] {
 
 }
 
-#textfield {
+#storeid-textfield {
 
                  color: #e08e2a;
                 height: 30px;
@@ -98,15 +122,6 @@ input[type=checkbox] {
 
 }
 
-hr.header {
-
-                 width: 50%;
-      background-color: #a9c4db;
-                height: 4px;
-                border: none;
-
-}
-
 /* Local Jobs View */
 
 div#position-container {
@@ -114,9 +129,6 @@ div#position-container {
                display: table;
                 margin: 20px;
       background-color: #3790db;
-    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-       -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 
 }
 
@@ -183,7 +195,6 @@ div.position-apply {
       background-color: #00b85c;
              font-size: 1.25em;
                  color: white;
-           text-shadow: 0px 0px 5px #000000;
 
 }
 
@@ -191,15 +202,12 @@ div.position-apply {
 
 /* Begin Personal Info View */
 
-
 div#form-container {
 
                display: table;
+               width: inherit;
                 margin: 0 auto;
       background-color: #3790db;
-    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-       -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 
 }
 
@@ -207,7 +215,8 @@ div.form-title {
 
                display: table-cell;
             text-align: right;
-               padding: 0 5px 0 5px;
+               padding: 10px 5px 0 5px;
+        vertical-align: top;
                  width: 250px;
                  color: white;
              font-size: 1.15em;
@@ -221,6 +230,7 @@ div.form-content {
                padding: 5px;
       background-color: white;
                  color: gray;
+                 width: 500px;
 
 }
 
@@ -246,3 +256,78 @@ div#validation {
 }
 
 /* End Personal Info View */
+
+/* Begin Questionnaire View */
+
+div.question-container {
+
+               display: table;
+                margin: auto auto;
+               padding: 5px;
+                 width: 60vw;
+      background-color: #3790db;
+
+}
+
+div.question {
+
+               display: table-cell;
+            text-align: right;
+               padding: 5px 10px 5px 5px;
+                 width: 250px;
+                 color: white;
+             font-size: 1.15em;
+
+}
+
+div.radio-button {
+
+               display: table-cell;
+            text-align: center;
+                 width: 30px;
+               padding: 5px;
+      background-color: white;
+
+}
+
+/* End Questionnaire View */
+
+/* Begin Job History View */
+
+div.jobhistory-container {
+
+                      width: 60vw;
+                     margin: 0 auto;
+
+}
+
+div.jobhistory-tab {
+
+                     margin: 20px auto 0 auto;
+                    display: table;
+                      width: inherit;
+                      color: white;
+           background-color: #00b85c;
+                  font-size: 1.2em;
+
+}
+
+div.job-bottom-box {
+
+           background-color: #296ca5;
+                    padding: 10px;
+                line-height: 20px;
+                      color: white;
+                  font-size: 1.15em;
+                     border: 1px solid #296ca5;
+
+}
+
+div.job-bottom-box:hover {
+
+           background-color: #3280c2;
+                     border: 1px solid #3280c2;
+
+}
+
+/* End Job History View */

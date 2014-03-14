@@ -2,36 +2,43 @@
 
 @{
     ViewBag.Title = "Questionnaire";
-    ViewBag.LeftButtonLink = "";
-    ViewBag.RightButtonLink = "";
 }
 
-<h2>@ViewBag.Title</h2>
+<div style="text-align: center; margin: 20px;">
 
-<div>
-    <section id="loginForm">
-        @using (Html.BeginForm("CheckQuestions", "Questionnaire", FormMethod.Post))
-        { 
-            <div class="form-group">
-                @for (int i = 0; i < Model.Count; i++ )
-                {
-                    <p>@Model[i].question</p>
-                    @Html.HiddenFor(model => model[i].correctAnswer, Model[i].correctAnswer);
-                    @Html.HiddenFor(model => model[i].question, Model[i].question);
-                    @Html.Label("Yes");
-                    @Html.RadioButtonFor(model => model[i].response, "y");
-                    @Html.Label("No");
-                    @Html.RadioButtonFor(model => model[i].response, "n");
-                    <br />
-                    <br />
-                }
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Apply" class="btn btn-default" />
+    <div class="content-header">Please answer a few questions...</div>
+
+    @using (Html.BeginForm("CheckQuestions", "Questionnaire", FormMethod.Post))
+    {
+
+        <div class="question-container box-shadow">
+
+            @for (int i = 0; i < Model.Count; i++)
+            {
+
+                @Html.HiddenFor(m => Model[i].correctAnswer, Model[i].correctAnswer);
+                @Html.HiddenFor(m => Model[i].question, Model[i].question);
+
+                <div style="display: table-row;">
+
+                    <div class="question">@Model[i].question</div>
+                    <div class="radio-button">
+                        @Html.Label("Yes")
+                        @Html.RadioButtonFor(m => m[i].response, "y")
+                    </div>
+                    <div class="radio-button" style="border-left: 1px solid #3790db;">
+                        @Html.Label("No")
+                        @Html.RadioButtonFor(m => m[i].response, "n")
+                    </div>
+
                 </div>
-            </div>
-        }
-    </section>
+
+            }
+
+        </div>
+
+        <input type="submit" value="Continue" />
+
+    }
 
 </div>
