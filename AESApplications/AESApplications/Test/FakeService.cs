@@ -59,11 +59,11 @@ namespace AESApplications.Test
             return allJobs;
         }
 
-        public List<FakeQuestion> getQuestionsTest(List<int> jobIds)
+        public List<QuestionModel> getQuestionsTest(List<int> jobIds)
         {
-            var allQuestions = new List<FakeQuestion>();
-            var q1 = new FakeQuestion();
-            var q2 = new FakeQuestion();
+            var allQuestions = new List<QuestionModel>();
+            var q1 = new QuestionModel();
+            var q2 = new QuestionModel();
 
             q1.question = "Can you lift over 25 pounds on a regular basis?";
             q1.correctAnswer = "Yes";

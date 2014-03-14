@@ -1,4 +1,5 @@
-﻿using AESApplications.Test;
+﻿using AESApplications.Models;
+using AESApplications.Test;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,18 +14,31 @@ namespace AESApplications.Controllers
          //
         // GET: /Questionnaire/
         [HttpPost]
-        public ActionResult Index(FormCollection fc )
+        public async Task<ActionResult> Index(FormCollection fc )
         {
-            List<FakeQuestion> questions;
-            var fakeServ = new FakeService();
-
+            List<QuestionModel> questions;
             List<int> ids = new List<int>();
             for (int i = 1; i < fc.Count; i++ )
             {
                  ids.Add(Convert.ToInt32(fc.Keys.Get(i)));
             }
-            questions = fakeServ.getQuestionsTest(ids);
 
+            var fakeServ = new FakeService();  //test code 
+            questions = fakeServ.getQuestionsTest(ids);  //test code
+
+            /**
+            using (AppServiceClient client = new AppServiceClient())
+            {
+                var tempQuestions = await client.getQuestionsAsync(ids.ToArray());
+                foreach (var question in tempQuestions)
+                {
+                    var tempQuestion = new QuestionModel();
+                    tempQuestion.question = question.theQuestion;
+                    tempQuestion.correctAnswer = question.theAnswer;
+                    questions.Add(tempQuestion);
+                }
+            }
+            **/
             return View(questions);
         }
 
