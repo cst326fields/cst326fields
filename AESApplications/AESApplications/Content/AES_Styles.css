@@ -20,7 +20,7 @@ div#header {
                display: table-row;
                  color: white;
       background-color: #296ca5;
-        letter-spacing: -2px;
+        letter-spacing: -1.5px;
              font-size: 150%;
            text-shadow: 0px 0px 10px #000000;
 
@@ -79,6 +79,13 @@ input[type=submit]:hover, input[type=button]:hover {
 
 }
 
+input[type=checkbox] {
+
+                height: 25px;
+                 width: 25px;
+
+}
+
 #textfield {
 
                  color: #e08e2a;
@@ -89,12 +96,6 @@ input[type=submit]:hover, input[type=button]:hover {
             text-align: center;
              font-size: large;
 
-}
-
-input[type="checkbox"] {
-
-                 width: 25px;
-                height: 25px;
 }
 
 hr.header {
@@ -187,3 +188,61 @@ div.position-apply {
 }
 
 /* End Local Jobs View */
+
+/* Begin Personal Info View */
+
+
+div#form-container {
+
+               display: table;
+                margin: 0 auto;
+      background-color: #3790db;
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+       -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+
+}
+
+div.form-title {
+
+               display: table-cell;
+            text-align: right;
+               padding: 0 5px 0 5px;
+                 width: 250px;
+                 color: white;
+             font-size: 1.15em;
+
+}
+
+div.form-content {
+
+               display: table-cell;
+            text-align: left;
+               padding: 5px;
+      background-color: white;
+                 color: gray;
+
+}
+
+.field-input {
+
+             max-width: 95%;
+               padding: 5px;
+             font-size: 1.15em;
+            border-top: none;
+           border-left: none;
+          border-right: none;
+      background-color: #F5F5F0;
+         border-bottom: 1px solid #a9c4db;
+              overflow: hidden;
+
+}
+
+div#validation {
+
+           line-height: 30px;
+                 color: red;
+
+}
+
+/* End Personal Info View */
