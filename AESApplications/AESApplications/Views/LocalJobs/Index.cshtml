@@ -52,7 +52,7 @@
                                 </div>
 
                                 <div class="position-detail-partial-content">
-                                    @job.description.Substring(0, 100)...
+                                    @job.description.Substring(0, job.description.Length < 100 ? job.description.Length : 100)...
                                 </div>
 
                             </div>
@@ -85,14 +85,14 @@
                                 <div class="position-detail-content">@job.hours</div>
                             </div>
 
-                            <div style="display: table-row;">
+                            <!--div style="display: table-row;">
                                 <div class="position-detail-title">Education</div>
                                 <div class="position-detail-content">@job.education</div>
-                            </div>
+                            </div-->
 
                             <div style="display: table-row;">
-                                <div class="position-detail-title">Requirements</div>
-                                <div class="position-detail-content">@job.requirements</div>
+                                <div class="position-detail-title">Pay</div>
+                                <div class="position-detail-content">@job.pay</div>
                             </div>
 
                         </div>
@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="position-apply text-shadow">
-                    <input type="checkbox" id="@job.jobId" value="@job.jobId.ToString()" />
+                    <input type="checkbox" id="@job.jobId" name="@job.jobId.ToString()" />
                     <br />
                     Add
                 </div>

@@ -1,4 +1,5 @@
-﻿using AESApplications.Models;
+﻿using AESApplications.AppServiceReference;
+using AESApplications.Models;
 using AESApplications.Test;
 using System;
 using System.Collections.Generic;
@@ -16,14 +17,14 @@ namespace AESApplications.Controllers
         [HttpPost]
         public async Task<ActionResult> Index(FormCollection fc )
         {
-            List<QuestionModel> questions;
+            var questions = new List<QuestionModel>();
             List<int> ids = new List<int>();
             for (int i = 1; i < fc.Count; i++ )
             {
                  ids.Add(Convert.ToInt32(fc.Keys.Get(i)));
             }
             if (ids.Count < 1)
-                return RedirectToAction("Index", "LocalJobs")
+                return RedirectToAction("Index", "LocalJobs");
             var fakeServ = new FakeService();  //test code 
             //questions = fakeServ.getQuestionsTest(ids);  //test code
 
