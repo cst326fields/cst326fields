@@ -129,26 +129,29 @@ namespace WcfService1
 
             foreach (var education in educations)
             {
-                Education temp = new Education();
-                temp.applicantId = education.applicantId;
-                temp.degreeMajor = education.degreeMajor;
-                temp.graduated = education.graduated;
-                temp.nameAddress = education.nameAddress;
-
-                try
+                if (education != null)
                 {
-                    using (AESDatabaseEntities context = new AESDatabaseEntities())
+                    Education temp = new Education();
+                    temp.applicantId = education.applicantId;
+                    temp.degreeMajor = education.degreeMajor;
+                    temp.graduated = education.graduated;
+                    temp.nameAddress = education.nameAddress;
+
+                    try
                     {
-                        context.Educations.Add(temp);
-                        context.SaveChanges();
+                        using (AESDatabaseEntities context = new AESDatabaseEntities())
+                        {
+                            context.Educations.Add(temp);
+                            context.SaveChanges();
 
+                        }
                     }
+                    catch (Exception)
+                    {
+                        result = false;
+                    }
+                    temp = null;
                 }
-                catch (Exception)
-                {
-                    result = false;
-                }
-                temp = null;
             }
             return result;
         }
@@ -162,34 +165,37 @@ namespace WcfService1
 
             foreach (var jobHistory in jobHistorys)
             {
-                JobHistory temp = new JobHistory();
-                temp.applicantId = jobHistory.applicantId;
-                temp.address = jobHistory.address;
-                temp.duties = jobHistory.duties;
-                temp.employer = jobHistory.employer;
-                temp.endSalary = jobHistory.endSalary;
-                temp.from = jobHistory.from;
-                temp.to = jobHistory.to;
-                temp.phone = jobHistory.phone;
-                temp.supervisor = jobHistory.supervisor;
-                temp.reasonLeave = jobHistory.reasonLeave;
-                temp.startSalary = jobHistory.startSalary;
-                temp.position = jobHistory.position;
-
-                try
+                if (jobHistory != null)
                 {
-                    using (AESDatabaseEntities context = new AESDatabaseEntities())
+                    JobHistory temp = new JobHistory();
+                    temp.applicantId = jobHistory.applicantId;
+                    temp.address = jobHistory.address;
+                    temp.duties = jobHistory.duties;
+                    temp.employer = jobHistory.employer;
+                    temp.endSalary = jobHistory.endSalary;
+                    temp.from = jobHistory.from;
+                    temp.to = jobHistory.to;
+                    temp.phone = jobHistory.phone;
+                    temp.supervisor = jobHistory.supervisor;
+                    temp.reasonLeave = jobHistory.reasonLeave;
+                    temp.startSalary = jobHistory.startSalary;
+                    temp.position = jobHistory.position;
+
+                    try
                     {
-                        context.JobHistories.Add(temp);
-                        context.SaveChanges();
+                        using (AESDatabaseEntities context = new AESDatabaseEntities())
+                        {
+                            context.JobHistories.Add(temp);
+                            context.SaveChanges();
 
+                        }
                     }
+                    catch (Exception)
+                    {
+                        result = false;
+                    }
+                    temp = null;
                 }
-                catch (Exception)
-                {
-                    result = false;
-                }
-                temp = null;
             }
             return result;
         }
@@ -203,26 +209,31 @@ namespace WcfService1
 
             foreach(var reference in references)
             {
-                Reference temp = new Reference();
-                temp.applicantId = reference.applicantId;
-                temp.company = reference.company;
-                temp.name = reference.name;
-                temp.phone = reference.phone;
-                temp.title = reference.title;
+                if (reference != null)
+                {
+                    Reference temp = new Reference();
+                    temp.applicantId = reference.applicantId;
+                    temp.company = reference.company;
+                    temp.name = reference.name;
+                    temp.phone = reference.phone;
+                    temp.title = reference.title;
 
-                try
-                {
-                    using (AESDatabaseEntities context = new AESDatabaseEntities())
+
+                    try
                     {
-                        context.References.Add(temp);
-                        context.SaveChanges();
+                        using (AESDatabaseEntities context = new AESDatabaseEntities())
+                        {
+                            context.References.Add(temp);
+                            context.SaveChanges();
+                        }
                     }
+                    catch (Exception)
+                    {
+                        result = false;
+                    }
+
+                    temp = null;
                 }
-                catch (Exception)
-                {
-                    result = false;
-                }
-                temp = null;
             }
             return result;
         }
@@ -252,6 +263,30 @@ namespace WcfService1
                 result = false;
             }
             return result;
+        }
+
+        public ApplicantApp getApplication(int appId)
+        {
+            ApplicantApp a = new ApplicantApp();
+
+            PersonalInfo p = new PersonalInfo();
+            JobHistory j = new JobHistory();
+            Education e = new Education();
+            Reference r = new Reference();
+
+            using (AESDatabaseEntities context = new AESDatabaseEntities())
+            {
+                p = (from per in context.PersonalInfoes where per.applicantId == appId select per).First();
+                j = (from jo in context.JobHistories where jo.applicantId == appId select jo).First();
+                e = (from ed in context.Educations where ed.applicantId == appId select ed).First();
+                r = (from re in context.References where re.applicantId == appId select re).First();
+            }
+            a.personalInfo = p;
+            a.jobHistory = j;
+            a.education = e;
+            a.reference = r;
+
+            return a;
         }
 
     }    

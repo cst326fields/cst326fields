@@ -68,6 +68,9 @@ namespace WcfService1
         //false if operation fails, true if successful
         [OperationContract]
         bool storeElectronicSig(ElectronicSig electronicSig);
+
+        [OperationContract]
+        ApplicantApp getApplication(int appId);
     }
 
     //Defined to combine entities Position/AvailablePositions into Job entity
