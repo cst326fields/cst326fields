@@ -1,4 +1,5 @@
-﻿using AESApplications.Models;
+﻿using AESApplications.AppServiceReference;
+using AESApplications.Models;
 using AESApplications.Test;
 using System;
 using System.Collections.Generic;
@@ -17,12 +18,11 @@ namespace AESApplications.Controllers
         {
             //var fakeServ = new FakeService();  // test code
             //List<JobModel> jobs = fakeServ.getLocalJobsTest(Convert.ToInt32(this.Session["storeId"])); //test code
-
+            var jobs = new List<JobModel>();
             using (var client = new AppServiceClient())
             {
                 client.Open();
                 var loadedJobs = await client.getJobsAsync(Convert.ToInt32(this.Session["storeId"]));
-                var jobs = new List<JobModel>();
                 foreach (var job in loadedJobs)
                 {
                     var tempJob = new JobModel();
@@ -30,7 +30,7 @@ namespace AESApplications.Controllers
                     tempJob.hours = job.jDays;
                     tempJob.description = job.jDescription;
                     tempJob.title = job.jTitle;
-                    tempJob.requirements = job.jPay; //change field to pay???
+                    tempJob.pay = job.jPay; //change field to pay???
                     //Service is mising store location as a field.. theres no way to retrieve it with current methods / lack of store id for job
                     jobs.Add(tempJob);
                 }

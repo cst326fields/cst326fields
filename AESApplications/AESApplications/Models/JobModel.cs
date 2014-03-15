@@ -13,6 +13,6 @@ namespace AESApplications.Models
         public string description { get; set; }
         public string hours { get; set; }
         public string education { get; set; }
-        public string requirements { get; set; }
+        public string pay { get; set; }
     }
 }

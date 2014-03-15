@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AESApplications.AppServiceReference;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,6 +33,7 @@ namespace AESApplications.Controllers
                 return RedirectToAction("Index", "PhoneScreen");
             else
             {
+                return RedirectToAction("Index", "PhoneScreen");
                 //error in storing signature
             }
         }
