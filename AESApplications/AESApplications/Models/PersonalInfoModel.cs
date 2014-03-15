@@ -50,14 +50,13 @@ namespace AESApplications.Models
 
         [Required]
         [Display(Name = "Phone")]
-        [RegularExpression(@"^(\d{1})?-?(\d{3})?-?\d{3}-\d{4}$", ErrorMessage = "Invalid phone number Ex: 123-456-7890")]
+        [RegularExpression(@"^(\d{1})?-?(\d{3})?-?\d{3}-?\d{4}$", ErrorMessage = "Invalid phone number Ex: 123-456-7890")]
         [DataType(DataType.PhoneNumber)]
         public string phone_num { get; set; }
 
         [Required]
         [Display(Name = "SSN#")]
-        [RegularExpression(@"^\d{3}-\d{2}-\d{4}$", ErrorMessage = "Invalid SSN, must match form XXX-XX-XXXX")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:###-##-####}")]
+        [RegularExpression(@"^\d{3}\d{2}\d{4}$", ErrorMessage = "Invalid SSN, must match form XXXXXXXXX")]
         public string ssn { get; set; }
     }
 }

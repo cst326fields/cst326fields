@@ -39,7 +39,7 @@ namespace AESApplications.Controllers
                     this.Session["ApplicantID"] = await client.storePersonalInfoAsync(personalInfo);
                     client.Close();
                 } 
-                if (this.Session["ApplicantId"] != null/** true**/)
+                if (this.Session["ApplicantId"] != null && Convert.ToInt32(this.Session["ApplicantId"]) > -1/** true**/)
                 {
                     return RedirectToAction("Index", "JobHistory");
                 }
