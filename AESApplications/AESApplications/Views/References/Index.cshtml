@@ -2,44 +2,65 @@
 
 @{
     ViewBag.Title = "References";
-    ViewBag.LeftButtonLink = "../Home/Welcome";
-    ViewBag.RightButtonLink = "";
 }
 
-<h2>@ViewBag.Title</h2>
+<div style="text-align: center; margin: 20px;">
 
-<section>
+    <div class="content-header">@ViewBag.Title</div>
+
     @using (Html.BeginForm("Index", "References", FormMethod.Post))
     {
+
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
+
         for (int i = 0; i < Model.Count; i++)
         {
-            <div>
-                @Html.LabelFor(m => m[i].name)
-                @Html.TextBoxFor(m => m[i].name)
-                @Html.ValidationMessageFor(m => m[i].name)
+
+            <div class="generic-container box-shadow">
+
+                <div style="display: table-row;">
+                    <div class="form-title">@Html.LabelFor(m => m[i].name)</div>
+                    <div class="form-content">
+                        @Html.TextBoxFor(m => m[i].name, new { Class = "field-input" })
+                        <br />
+                        <div id="validation">@Html.ValidationMessageFor(m => m[i].name)</div>
+                    </div>
+                </div>
+
+                <div style="display: table-row;">
+                    <div class="form-title">@Html.LabelFor(m => m[i].phone)</div>
+                    <div class="form-content">
+                        @Html.TextBoxFor(m => m[i].phone, new { Class = "field-input" })
+                        <br />
+                        <div id="validation">@Html.ValidationMessageFor(m => m[i].phone)</div>
+                    </div>
+                </div>
+
+                <div style="display: table-row;">
+                    <div class="form-title">@Html.LabelFor(m => m[i].company)</div>
+                    <div class="form-content">
+                        @Html.TextBoxFor(m => m[i].company, new { Class = "field-input" })
+                        <br />
+                        <div id="validation">@Html.ValidationMessageFor(m => m[i].company)</div>
+                    </div>
+                </div>
+
+                <div style="display: table-row;">
+                    <div class="form-title">@Html.LabelFor(m => m[i].title)</div>
+                    <div class="form-content">
+                        @Html.TextBoxFor(m => m[i].title, new { Class = "field-input" })
+                        <br />
+                        <div id="validation">@Html.ValidationMessageFor(m => m[i].title)</div>
+                    </div>
+                </div>
+
             </div>
-            <div>
-                @Html.LabelFor(m => m[i].phone)
-                @Html.TextBoxFor(m => m[i].phone)
-                @Html.ValidationMessageFor(m => m[i].phone)
-            </div>
-            <div>
-                @Html.LabelFor(m => m[i].company)
-                @Html.TextBoxFor(m => m[i].company)
-                @Html.ValidationMessageFor(m => m[i].company)
-            </div>
-            <div>
-                @Html.LabelFor(m => m[i].title)
-                @Html.TextBoxFor(m => m[i].title)
-                @Html.ValidationMessageFor(m => m[i].title)
-            </div>
-            <br />
+
         }
-        <br />
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Submit" class="btn btn-default" />
-        </div>
+
+        <input type="submit" value="Continue" />
+
     }
-</section>
+
+</div>

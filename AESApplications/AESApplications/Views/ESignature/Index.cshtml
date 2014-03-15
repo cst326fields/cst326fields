@@ -1,20 +1,21 @@
 ﻿@{
     ViewBag.Title = "E-Signature";
-    ViewBag.LeftButtonLink = "";
-    ViewBag.RightButtonLink = "";
 }
 
-<span class="content_title">
-    <br />
-    <br />
-    Click here if you verify all information provided is accurate.
-    <br />
-    <br />
-    <br />
-</span>
+<div style="text-align: center; margin: 20px;">
 
-<div id="navcontainer">
-    <ul>
-        <li>@Html.ActionLink("I agree", "ApplicationFinished", "ESignature")</li>
-    </ul>
+    <div class="content-header">@ViewBag.Title</div>
+
+    <div class="content-subheader">
+        You're almost there!
+        <br />
+        <br />
+        By continuing to the next step, you verify that all information entered is accurate and correct.
+        <br />
+        <br />
+        Click "I Agree" below to electronically sign your application.
+    </div>
+
+    <input type="button" value="I Agree" onclick="location.href='@Url.Action("ApplicationFinished", "ESignature")'" />
+
 </div>

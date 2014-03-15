@@ -8,6 +8,14 @@
 
 }
 
+div.generic-container {
+
+    background-color: #3790db;
+    margin: 10px auto 20px auto;
+    width: 50vw;
+
+}
+
 .background-orange { background-color: #e08e2a; }
 .background-blue { background-color: #3790db; }
 .background-dark-blue { background-color: #296ca5; }

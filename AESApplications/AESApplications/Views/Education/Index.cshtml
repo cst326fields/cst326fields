@@ -2,44 +2,63 @@
 
 @{
     ViewBag.Title = "Education";
-    ViewBag.LeftButtonLink = "../Home/Welcome";
-    ViewBag.RightButtonLink = "";
 }
 
-<h2>@ViewBag.Title</h2>
+<div style="text-align: center; margin: 20px;">
 
-<section>
+    <div class="content-header">@ViewBag.Title</div>
+
     @using (Html.BeginForm("Index", "Education", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
+
         for (int i = 0; i < Model.Count; i++)
         {
-            <div>
-                @Html.LabelFor(m => m[i].name_address)
-                @Html.TextBoxFor(m => m[i].name_address)
-                @Html.ValidationMessageFor(m => m[i].name_address)
+
+            <div class="generic-container box-shadow">
+
+                <div style="display: table-row;">
+                    <div class="form-title">@Html.LabelFor(m => m[i].name_address)</div>
+                    <div class="form-content">
+                        @Html.TextBoxFor(m => m[i].name_address, new { Class = "field-input" })
+                        <br />
+                        <div id="validation">@Html.ValidationMessageFor(m => m[i].name_address)</div>
+                    </div>
+                </div>
+
+                <div style="display: table-row;">
+                    <div class="form-title">@Html.LabelFor(m => m[i].years_attended)</div>
+                    <div class="form-content">
+                        @Html.TextBoxFor(m => m[i].years_attended, new { Class = "field-input" })
+                        <br />
+                        <div id="validation">@Html.ValidationMessageFor(m => m[i].years_attended)</div>
+                    </div>
+                </div>
+
+                <div style="display: table-row;">
+                    <div class="form-title">@Html.LabelFor(m => m[i].graduated)</div>
+                    <div class="form-content">
+                        @Html.TextBoxFor(m => m[i].graduated, new { Class = "field-input" })
+                        <br />
+                        <div id="validation">@Html.ValidationMessageFor(m => m[i].graduated)</div>
+                    </div>
+                </div>
+
+                <div style="display: table-row;">
+                    <div class="form-title">@Html.LabelFor(m => m[i].degree)</div>
+                    <div class="form-content">
+                        @Html.TextBoxFor(m => m[i].degree, new { Class = "field-input" })
+                        <br />
+                        <div id="validation">@Html.ValidationMessageFor(m => m[i].degree)</div>
+                    </div>
+                </div>
+
             </div>
-            <div>
-                @Html.LabelFor(m => m[i].years_attended)
-                @Html.TextBoxFor(m => m[i].years_attended)
-                @Html.ValidationMessageFor(m => m[i].years_attended)
-            </div>
-            <div>
-                @Html.LabelFor(m => m[i].graduated)
-                @Html.TextBoxFor(m => m[i].graduated)
-                @Html.ValidationMessageFor(m => m[i].graduated)
-            </div>
-            <div>
-                @Html.LabelFor(m => m[i].degree)
-                @Html.TextBoxFor(m => m[i].degree)
-                @Html.ValidationMessageFor(m => m[i].degree)
-            </div>
-            <br />
         }
-        <br />
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Submit" class="btn btn-default" />
-        </div>
+        
+        <input type="submit" value="Continue" />
+
     }
-</section>
+
+</div>
