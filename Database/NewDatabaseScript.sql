@@ -1,3 +1,26 @@
+IF OBJECT_ID('[dbo].[Education]', 'U') IS NOT NULL
+DROP TABLE [dbo].[Education];
+IF OBJECT_ID('[dbo].[References]', 'U') IS NOT NULL
+DROP TABLE [dbo].[References];
+IF OBJECT_ID('[dbo].[ElectronicSig]', 'U') IS NOT NULL
+DROP TABLE [dbo].[ElectronicSig];
+IF OBJECT_ID('[dbo].[JobHistory]', 'U') IS NOT NULL
+DROP TABLE [dbo].[JobHistory];
+IF OBJECT_ID('[dbo].[Questionaire]', 'U') IS NOT NULL
+DROP TABLE [dbo].[Questionaire];
+IF OBJECT_ID('[dbo].[Question]', 'U') IS NOT NULL
+DROP TABLE [dbo].[Question];
+IF OBJECT_ID('[dbo].[Application]', 'U') IS NOT NULL
+DROP TABLE [dbo].[Application];
+IF OBJECT_ID('[dbo].[AvailablePosition]', 'U') IS NOT NULL
+DROP TABLE [dbo].[AvailablePosition];
+IF OBJECT_ID('[dbo].[Position]', 'U') IS NOT NULL
+DROP TABLE [dbo].[Position];
+IF OBJECT_ID('[dbo].[Store]', 'U') IS NOT NULL
+DROP TABLE [dbo].[Store];
+IF OBJECT_ID('[dbo].[PersonalInfo]', 'U') IS NOT NULL
+DROP TABLE [dbo].[PersonalInfo];
+
 CREATE TABLE [dbo].[PersonalInfo]
 (
 	[applicantId] INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
@@ -8,7 +31,7 @@ CREATE TABLE [dbo].[PersonalInfo]
     [address] VARCHAR(255) NOT NULL, 
     [Phone] VARCHAR(16) NULL, 
     [alias] VARCHAR(255) NULL
-)
+);
 
 CREATE TABLE [dbo].[Store]
 (
@@ -17,7 +40,11 @@ CREATE TABLE [dbo].[Store]
     [address] VARCHAR(255) NOT NULL, 
     [city] VARCHAR(255) NOT NULL, 
     [stateAbbreviation] CHAR(2) NOT NULL
-)
+);
+
+INSERT INTO [dbo].[Store] VALUES ('West Wilsonville Store', '1234 Road St', 'Wilsonville', 'OR');
+INSERT INTO [dbo].[Store] VALUES ('East Wilsonville Store', '3678 High St', 'Wilsonville', 'OR');
+INSERT INTO [dbo].[Store] VALUES ('West Portland Store', '786 Stree st', 'Portland', 'OR');
 
 CREATE TABLE [dbo].[Position]
 (
@@ -25,7 +52,11 @@ CREATE TABLE [dbo].[Position]
     [title] VARCHAR(255) NOT NULL, 
     [description] VARCHAR(255) NOT NULL, 
     [pay] VARCHAR(255) NOT NULL,
-)
+);
+
+INSERT INTO [dbo].[Position] VALUES ('Cashier', 'Run and maintain a cash til. Take money and give change.', '$10/hr');
+INSERT INTO [dbo].[Position] VALUES ('Custodian', 'Maintain store cleanliness.', '$9.80/hr');
+INSERT INTO [dbo].[Position] VALUES ('Assistant Manager', 'Help store manager operations. Make deposits every shift to local bank.', '$15/hr');
 
 CREATE TABLE [dbo].[AvailablePosition]
 (
@@ -35,7 +66,12 @@ CREATE TABLE [dbo].[AvailablePosition]
     [workingDays] VARCHAR(255) NOT NULL,
     CONSTRAINT [FK_Store_AvailablePosition] FOREIGN KEY (storeId) REFERENCES [dbo].[Store] ([storeId]),
     CONSTRAINT [FK_Position_AvailablePosition] FOREIGN KEY (positionId) REFERENCES [dbo].[Position] ([positionId])
-)
+);
+
+INSERT INTO [dbo].[AvailablePosition] VALUES ('1', '1','Monday-Friday');
+INSERT INTO [dbo].[AvailablePosition] VALUES ('1', '2','Satuday-Sunday');
+INSERT INTO [dbo].[AvailablePosition] VALUES ('1', '3','Satuday-Wednesday');
+INSERT INTO [dbo].[AvailablePosition] VALUES ('2', '3','Monday-Friday');
 
 CREATE TABLE [dbo].[Application]
 (
@@ -46,7 +82,7 @@ CREATE TABLE [dbo].[Application]
     [availablePosId] INT NOT NULL,
 	[storeId] INT NOT NULL, 
     PRIMARY KEY CLUSTERED ([applicantId] ASC, [availablePosId] ASC)
-)
+);
 
 CREATE TABLE [dbo].[Education]
 (
@@ -58,7 +94,7 @@ CREATE TABLE [dbo].[Education]
     [graduated] CHAR(1) NULL, 
     [degreeMajor] VARCHAR(255) NULL,
 	PRIMARY KEY CLUSTERED ([applicantId] ASC, [educationId] ASC)
-)
+);
 
 CREATE TABLE [dbo].[ElectronicSig]
 (
@@ -67,7 +103,7 @@ CREATE TABLE [dbo].[ElectronicSig]
     [signature] VARCHAR(255) NULL, 
     [date] DATETIME NULL
 
-)
+);
 
 CREATE TABLE [dbo].[JobHistory]
 (
@@ -86,23 +122,35 @@ CREATE TABLE [dbo].[JobHistory]
     [reasonLeave] VARCHAR(255) NULL, 
     [duties] VARCHAR(255) NULL,
 	PRIMARY KEY CLUSTERED ([applicantId] ASC, [jobHistoryId] ASC)
-)
+);
 
 CREATE TABLE [dbo].[Question]
 (
 	[questionId] INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
     [theQuestion] VARCHAR(255) NOT NULL, 
     [theAnswer] NCHAR(10) NOT NULL
-)
+);
+
+INSERT INTO [dbo].[Question] VALUES ('Can you lift 50 lbs?', 'y');
+INSERT INTO [dbo].[Question] VALUES ('Can you stand for over 8 hours', 'y');
+INSERT INTO [dbo].[Question] VALUES ('Do you have transportation?', 'y');
 
 CREATE TABLE [dbo].[Questionaire]
 (
 	[questionaireId] INT NOT NULL IDENTITY(1,1),
 	[questionId] INT NOT NULL, 
-    [positionId] INT NOT NULL PRIMARY KEY,
+    [positionId] INT NOT NULL,
+	PRIMARY KEY CLUSTERED ([questionId] ASC, [positionId] ASC),
     CONSTRAINT [FK_Question_Questionaire] FOREIGN KEY (questionId) REFERENCES [dbo].[Question] ([questionId]),
     CONSTRAINT [FK_Position_Questionaire] FOREIGN KEY (positionId) REFERENCES [dbo].[Position] ([positionId])
-)
+);
+
+INSERT INTO [dbo].[Questionaire] VALUES (1, 1);
+INSERT INTO [dbo].[Questionaire] VALUES (2, 1);
+INSERT INTO [dbo].[Questionaire] VALUES (3, 1);
+INSERT INTO [dbo].[Questionaire] VALUES (1, 2);
+INSERT INTO [dbo].[Questionaire] VALUES (2, 2);
+INSERT INTO [dbo].[Questionaire] VALUES (3, 2);
 
 CREATE TABLE [dbo].[References]
 (
@@ -114,6 +162,6 @@ CREATE TABLE [dbo].[References]
     [company] VARCHAR(255) NULL, 
     [title] VARCHAR(255) NULL,
 	PRIMARY KEY CLUSTERED ([applicantId] ASC, [referenceId] ASC)
-)
+);
 
 
