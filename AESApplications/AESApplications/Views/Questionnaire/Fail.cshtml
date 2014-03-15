@@ -1,7 +1,25 @@
 ﻿
 @{
-    ViewBag.Title = "Fail";
+    ViewBag.Title = "Do you meet the requirements?";
 }
 
-<h2>Fail</h2>
+<div style="text-align: center; margin: 20px;">
 
+    <div class="content-header">@ViewBag.Title</div>
+
+    <div class="content-subheader">
+        One or more of your answers disqualify you from the 
+        <br />
+        position(s) you are applying for.  
+        <br />
+        <br />
+        Please contact us at 1-800-968-7825 for more information, 
+        <br/ >
+        or click below to continue searching for positions.
+        <br />
+        <br />
+    </div>
+
+    <input type="button" value="Continue" onclick="location.href='@Url.Action("Index", "LocalJobs")'" />
+
+</div>
