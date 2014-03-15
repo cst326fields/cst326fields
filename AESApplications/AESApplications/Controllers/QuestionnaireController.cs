@@ -22,12 +22,12 @@ namespace AESApplications.Controllers
             {
                  ids.Add(Convert.ToInt32(fc.Keys.Get(i)));
             }
-
+            if (ids.Count < 1)
+                return RedirectToAction("Index", "LocalJobs")
             var fakeServ = new FakeService();  //test code 
-            questions = fakeServ.getQuestionsTest(ids);  //test code
+            //questions = fakeServ.getQuestionsTest(ids);  //test code
 
-            /**
-            using (AppServiceClient client = new AppServiceClient())
+            using (var client = new AppServiceClient())
             {
                 var tempQuestions = await client.getQuestionsAsync(ids.ToArray());
                 foreach (var question in tempQuestions)
@@ -38,7 +38,6 @@ namespace AESApplications.Controllers
                     questions.Add(tempQuestion);
                 }
             }
-            **/
             return View(questions);
         }
 

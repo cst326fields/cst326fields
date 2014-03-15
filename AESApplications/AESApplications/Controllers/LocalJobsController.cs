@@ -15,10 +15,9 @@ namespace AESApplications.Controllers
         // GET: /LocalJobs/
         public async Task<ActionResult> Index()
         {
-            var fakeServ = new FakeService();  // test code
-            List<JobModel> jobs = fakeServ.getLocalJobsTest(Convert.ToInt32(this.Session["storeId"])); //test code
+            //var fakeServ = new FakeService();  // test code
+            //List<JobModel> jobs = fakeServ.getLocalJobsTest(Convert.ToInt32(this.Session["storeId"])); //test code
 
-            /**
             using (var client = new AppServiceClient())
             {
                 client.Open();
@@ -37,8 +36,9 @@ namespace AESApplications.Controllers
                 }
                 client.Close();
             }
-            **/
+          
             return View(jobs);
         }
     }
+
 }

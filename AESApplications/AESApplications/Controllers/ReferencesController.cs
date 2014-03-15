@@ -28,7 +28,6 @@ namespace AESApplications.Controllers
             if (ModelState.IsValid)
             {
                 bool referencesStored = false;
-                /**
                 using (var client = new AppServiceClient())
                 {
                     client.Open();
@@ -45,8 +44,8 @@ namespace AESApplications.Controllers
                     }
                     referencesStored = await client.storeReferencesAsync(references.ToArray());
                     client.Close();
-                }**/
-                if (/**referencesStored**/true)
+                }
+                if (referencesStored/**true**/)
                     return RedirectToAction("Index", "ESignature");
                 else
                 {

@@ -23,7 +23,7 @@ namespace AESApplications.Controllers
         public async Task<ActionResult> Index(PersonalInfoModel model)
         {
             if (ModelState.IsValid)
-            {  /**
+            {  
                 using (var client = new AppServiceClient())
                 {
                     client.Open();
@@ -37,8 +37,8 @@ namespace AESApplications.Controllers
                     personalInfo.socialNum = model.ssn;
                     this.Session["ApplicantID"] = await client.storePersonalInfoAsync(personalInfo);
                     client.Close();
-                } **/
-                if (/**this.Session["ApplicantId"] != null**/ true)
+                } 
+                if (this.Session["ApplicantId"] != null/** true**/)
                 {
                     return RedirectToAction("Index", "JobHistory");
                 }

@@ -28,7 +28,6 @@ namespace AESApplications.Controllers
             if (ModelState.IsValid)
             {
                 bool educationStored = false;
-                /**
                 using (var client = new AppServiceClient())
                 {
                     client.Open();
@@ -45,8 +44,8 @@ namespace AESApplications.Controllers
                     }
                     educationStored = await client.storeEducationsAsync(education.ToArray());
                     client.Close();
-                } **/
-                if (/**educationStored**/ true)
+                } 
+                if (educationStored/** true**/)
                     return RedirectToAction("Index", "References");
                 else
                 {

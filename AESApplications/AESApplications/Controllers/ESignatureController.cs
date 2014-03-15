@@ -19,7 +19,6 @@ namespace AESApplications.Controllers
         public async Task<ActionResult> ApplicationFinished()
         {
             bool signatureStored = false;
-            /**
             using (var client = new AppServiceClient())
             {
                 client.Open();
@@ -28,8 +27,8 @@ namespace AESApplications.Controllers
                 sig.signature = (string)this.Session["ApplicantId"];
                 signatureStored = await client.storeElectronicSigAsync(sig);
                 client.Close();
-            } **/
-            if (/**signatureStored**/true)
+            } 
+            if (signatureStored/**true**/)
                 return RedirectToAction("Index", "PhoneScreen");
             else
             {

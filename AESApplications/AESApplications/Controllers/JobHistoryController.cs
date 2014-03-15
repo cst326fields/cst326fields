@@ -29,7 +29,6 @@ namespace AESApplications.Controllers
             if (ModelState.IsValid)
             {
                 bool historyStored = false;
-                /**
                 using (var client = new AppServiceClient())
                 {
                     client.Open();
@@ -59,8 +58,8 @@ namespace AESApplications.Controllers
                     }
                     historyStored = await client.storeJobHistoryAsync(history.ToArray());
                     client.Close();
-                } **/
-                if (/**historyStored**/true)
+                }
+                if (historyStored/**true**/)
                     return RedirectToAction("Index", "Education");
                 else
                 {
