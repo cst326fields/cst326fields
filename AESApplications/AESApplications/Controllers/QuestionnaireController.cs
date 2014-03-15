@@ -46,12 +46,21 @@ namespace AESApplications.Controllers
         public ActionResult CheckQuestions(List<FakeQuestion> questionnair)
         {
             bool questionFailed = false;
+            foreach (var question in questionnair)
+            {
+                if (question.correctAnswer.CompareTo(question.response) != 0)
+                    questionFailed = true;
+            }
             if (questionFailed) {
-                //fail questionnair response
+                return RedirectToAction("Fail", "Questionnaire"); 
             }
             return RedirectToAction("Index","PersonalInfo");
         }
-        
+
+        public ActionResult Fail() 
+        {
+            return View();
+        }
     }
 }
 

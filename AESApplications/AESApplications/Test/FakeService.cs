@@ -66,9 +66,9 @@ namespace AESApplications.Test
             var q2 = new QuestionModel();
 
             q1.question = "Can you lift over 25 pounds on a regular basis?";
-            q1.correctAnswer = "Yes";
+            q1.correctAnswer = "y";
             q2.question = "Can you work on weekends?";
-            q2.correctAnswer = "Yes";
+            q2.correctAnswer = "y";
 
             allQuestions.Add(q1);
             allQuestions.Add(q2);

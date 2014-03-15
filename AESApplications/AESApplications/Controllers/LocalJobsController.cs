@@ -15,12 +15,13 @@ namespace AESApplications.Controllers
         // GET: /LocalJobs/
         public async Task<ActionResult> Index()
         {
-            var fakeServ = new FakeService();
-            List<JobModel> jobs = fakeServ.getLocalJobsTest(Convert.ToInt32(this.Session["storeId"]));
+            var fakeServ = new FakeService();  // test code
+            List<JobModel> jobs = fakeServ.getLocalJobsTest(Convert.ToInt32(this.Session["storeId"])); //test code
 
             /**
-            using (AppServiceClient client = new AppServiceClient())
+            using (var client = new AppServiceClient())
             {
+                client.Open();
                 var loadedJobs = await client.getJobsAsync(Convert.ToInt32(this.Session["storeId"]));
                 var jobs = new List<JobModel>();
                 foreach (var job in loadedJobs)
@@ -33,7 +34,8 @@ namespace AESApplications.Controllers
                     tempJob.requirements = job.jPay; //change field to pay???
                     //Service is mising store location as a field.. theres no way to retrieve it with current methods / lack of store id for job
                     jobs.Add(tempJob);
-                }                         
+                }
+                client.Close();
             }
             **/
             return View(jobs);

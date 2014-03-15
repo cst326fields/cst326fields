@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -22,12 +24,48 @@ namespace AESApplications.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(List<JobHistoryModel> model)
+        public async Task<ActionResult> Index(List<JobHistoryModel> model)
         {
             if (ModelState.IsValid)
             {
-                //save the form here
-                return RedirectToAction("Index", "Education");
+                bool historyStored = false;
+                /**
+                using (var client = new AppServiceClient())
+                {
+                    client.Open();
+                    var history = new List<JobHistory>();
+                    foreach (var jobHistory in model)
+                    {
+                        int tempYear;
+                        int tempMonth;
+                        var jobHist = new JobHistory();
+                        jobHist.address = new StringBuilder(jobHistory.street + " " + jobHistory.city + ", " + jobHistory.state + " " + jobHistory.zip).ToString();
+                        jobHist.applicantId = Convert.ToInt32(this.Session["ApplicantId"]);
+                        jobHist.duties = jobHistory.responsibilities;
+                        jobHist.employer = jobHistory.employer;
+                        jobHist.endSalary = jobHistory.salary_end;
+                        tempYear = Convert.ToInt32(jobHistory.from_year);  //add validation for valid year
+                        tempMonth = Convert.ToInt32(jobHistory.from_month); //add validation for valid month
+                        jobHist.from = new DateTime(tempYear, tempMonth, 1);
+                        tempYear = Convert.ToInt32(jobHistory.to_year);  //add validation for valid year
+                        tempMonth = Convert.ToInt32(jobHistory.to_month); //add validation for valid month
+                        jobHist.to = new DateTime(tempYear, tempMonth, 1);
+                        jobHist.phone = jobHistory.phone;
+                        jobHist.position = jobHistory.position;
+                        jobHist.reasonLeave = jobHistory.reason_for_leaving;
+                        jobHist.startSalary = jobHistory.salary_start;
+                        jobHist.supervisor = jobHistory.supervisor;
+                        history.Add(jobHist);
+                    }
+                    historyStored = await client.storeJobHistoryAsync(history.ToArray());
+                    client.Close();
+                } **/
+                if (/**historyStored**/true)
+                    return RedirectToAction("Index", "Education");
+                else
+                {
+                    //error in storing history... add error view or determine action??
+                }
             }
             return View(model);
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -15,10 +16,25 @@ namespace AESApplications.Controllers
             return View();
         }
 
-        public ActionResult ApplicationFinished()
+        public async Task<ActionResult> ApplicationFinished()
         {
-            //save the responce to esignature
-            return RedirectToAction("Index", "PhoneScreen");
+            bool signatureStored = false;
+            /**
+            using (var client = new AppServiceClient())
+            {
+                client.Open();
+                var sig = new ElectronicSig();
+                sig.date = new DateTime();
+                sig.signature = (string)this.Session["ApplicantId"];
+                signatureStored = await client.storeElectronicSigAsync(sig);
+                client.Close();
+            } **/
+            if (/**signatureStored**/true)
+                return RedirectToAction("Index", "PhoneScreen");
+            else
+            {
+                //error in storing signature
+            }
         }
 	}
 }

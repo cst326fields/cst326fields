@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -22,12 +23,35 @@ namespace AESApplications.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(List<EducationModel> model)
+        public async Task<ActionResult> Index(List<EducationModel> model)
         {
             if (ModelState.IsValid)
             {
-                //save the form here
-                return RedirectToAction("Index", "References");
+                bool educationStored = false;
+                /**
+                using (var client = new AppServiceClient())
+                {
+                    client.Open();
+                    var education = new List<Education>();
+                    foreach (var ed in model)
+                    {
+                        var temp = new Education();
+                        temp.applicantId = Convert.ToInt32(this.Session["ApplicantId"]);
+                        temp.degreeMajor = ed.degree;
+                        temp.graduated = ed.graduated;
+                        temp.nameAddress = ed.name_address;
+                        temp.yearsAttended = ed.years_attended;
+                        education.Add(temp);
+                    }
+                    educationStored = await client.storeEducationsAsync(education.ToArray());
+                    client.Close();
+                } **/
+                if (/**educationStored**/ true)
+                    return RedirectToAction("Index", "References");
+                else
+                {
+                    //error occured storing education 
+                }
             }
             return View(model);
         }
