@@ -27,7 +27,7 @@ CREATE TABLE [dbo].[PersonalInfo]
     [firstName] VARCHAR(255) NOT NULL, 
     [middleName] VARCHAR(255) NULL, 
     [lastName] VARCHAR(255) NOT NULL, 
-    [socialNum] VARCHAR(9) NOT NULL, 
+    [socialNum] VARCHAR(16) NOT NULL, 
     [address] VARCHAR(255) NOT NULL, 
     [Phone] VARCHAR(16) NULL, 
     [alias] VARCHAR(255) NULL
@@ -50,13 +50,38 @@ CREATE TABLE [dbo].[Position]
 (
 	[positionId] INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
     [title] VARCHAR(255) NOT NULL, 
-    [description] VARCHAR(255) NOT NULL, 
+    [description] VARCHAR(2000) NOT NULL, 
     [pay] VARCHAR(255) NOT NULL,
 );
 
-INSERT INTO [dbo].[Position] VALUES ('Cashier', 'Run and maintain a cash til. Take money and give change.', '$10/hr');
-INSERT INTO [dbo].[Position] VALUES ('Custodian', 'Maintain store cleanliness.', '$9.80/hr');
-INSERT INTO [dbo].[Position] VALUES ('Assistant Manager', 'Help store manager operations. Make deposits every shift to local bank.', '$15/hr');
+INSERT INTO [dbo].[Position] VALUES ('Cashier', 'Greet customers as they arrive at the store and provide them with information 
+Respond to customers’ records and resolve their issues
+Take payment in exchange of items sold
+Bag, box or wrap purchased items
+Enter transactions in the cash register and provide customers with the total
+Identify prices of goods using memory or scanner
+Issue receipts and change to customers
+', '$10/hr');
+
+INSERT INTO [dbo].[Position] VALUES ('Custodian', '
+Clean building floors by sweeping, mopping, scrubbing, or vacuuming them.
+Gather and empty trash.
+Service, clean, and supply restrooms.
+Clean and polish furniture and fixtures.
+Clean windows, glass partitions, and mirrors, using soapy water or other cleaners, sponges, and squeegees.
+Dust furniture, walls, machines, and equipment.
+', '$9.80/hr');
+
+INSERT INTO [dbo].[Position] VALUES ('Assistant Manager', '
+Ensure the business operations run smoothly in the shop
+Keeping on track to meet the monthly budgets and targets
+Provide training for staff and new recruitments
+Provide excellent customer service
+Prepared to attend to urgent customers when required
+Planning rosters and duties for staff
+Monitoring the displays of products on shelves
+Handling the deliveries, checking quality, expiry date, price and correct quantity
+', '$15/hr');
 
 CREATE TABLE [dbo].[AvailablePosition]
 (
@@ -128,7 +153,7 @@ CREATE TABLE [dbo].[Question]
 (
 	[questionId] INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
     [theQuestion] VARCHAR(255) NOT NULL, 
-    [theAnswer] NCHAR(10) NOT NULL
+    [theAnswer] NCHAR(1) NOT NULL
 );
 
 INSERT INTO [dbo].[Question] VALUES ('Can you lift 50 lbs?', 'y');
