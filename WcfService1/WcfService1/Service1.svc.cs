@@ -61,17 +61,27 @@ namespace WcfService1
             {
                 foreach(int id in positionIds)
                 {
-                    var question = (from q in context.Questionaires where q.positionId == id select q);
+                    var question = (from q in context.Questionaires where q.positionId == id group q by new { q.Question } into g select g).ToList();
+
                     foreach(var x in question)
                     {
+                        bool addme = true;
                         Question temp = new Question();
-                        temp.theQuestion = x.Question.theQuestion;
-                        temp.theAnswer = x.Question.theAnswer;
-                        questions.Add(temp);
+                        temp.theQuestion = x.Key.Question.theQuestion;
+                        temp.theAnswer = x.Key.Question.theAnswer;
+                        foreach (var ques in questions)
+                        {
+                            if (temp.theQuestion.CompareTo(ques.theQuestion) == 0)
+                            {
+                                addme = false;
+                            }
+                        }
+                        if (addme)
+                            questions.Add(temp);
                     }
                 }
             }
-            return questions;
+                return questions;
         }
 
         public int storePersonalInfo(PersonalInfo personalInfo)
