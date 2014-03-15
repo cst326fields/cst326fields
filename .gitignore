@@ -149,3 +149,8 @@ $RECYCLE.BIN/
 
 # Mac crap
 .DS_Store
+
+# AES ignores
+AESApplications\AESApplications\AESApplications.csproj
+AESApplications\AESApplications\Web.config
+WcfService1\WcfService1\Web.config
