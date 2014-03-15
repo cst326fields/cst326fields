@@ -25,7 +25,8 @@ namespace AESApplications.Controllers
                 client.Open();
                 var sig = new ElectronicSig();
                 sig.date = new DateTime();
-                sig.signature = (string)this.Session["ApplicantId"];
+                sig.applicantId = Convert.ToInt32(this.Session["ApplicantId"]);
+                sig.signature = null;
                 signatureStored = await client.storeElectronicSigAsync(sig);
                 client.Close();
             } 
