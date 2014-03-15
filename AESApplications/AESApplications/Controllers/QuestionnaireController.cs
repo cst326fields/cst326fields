@@ -48,7 +48,7 @@ namespace AESApplications.Controllers
             bool questionFailed = false;
             foreach (var question in questionnair)
             {
-                if (question.correctAnswer.CompareTo(question.response) != 0)
+                if (question.correctAnswer[0] != question.response[0])
                     questionFailed = true;
             }
             if (questionFailed) {

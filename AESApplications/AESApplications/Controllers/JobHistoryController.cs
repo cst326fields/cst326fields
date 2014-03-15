@@ -44,12 +44,20 @@ namespace AESApplications.Controllers
                         jobHist.duties = jobHistory.responsibilities;
                         jobHist.employer = jobHistory.employer;
                         jobHist.endSalary = jobHistory.salary_end;
-                        tempYear = Convert.ToInt32(jobHistory.from_year);  //add validation for valid year
-                        tempMonth = Convert.ToInt32(jobHistory.from_month); //add validation for valid month
-                        jobHist.from = new DateTime(tempYear, tempMonth, 1);
-                        tempYear = Convert.ToInt32(jobHistory.to_year);  //add validation for valid year
-                        tempMonth = Convert.ToInt32(jobHistory.to_month); //add validation for valid month
-                        jobHist.to = new DateTime(tempYear, tempMonth, 1);
+                        if (jobHistory.from_year != null && jobHistory.from_month != null)
+                        {
+                            tempYear = Convert.ToInt32(jobHistory.from_year);  //add validation for valid year
+                            tempMonth = Convert.ToInt32(jobHistory.from_month); //add validation for valid month
+                            jobHist.from = new DateTime(tempYear, tempMonth, 1);
+                            tempYear = Convert.ToInt32(jobHistory.to_year);  //add validation for valid year
+                            tempMonth = Convert.ToInt32(jobHistory.to_month); //add validation for valid month
+                            jobHist.to = new DateTime(tempYear, tempMonth, 1);
+                        }
+                        else
+                        {
+                            jobHist.to = null;
+                            jobHist.from = null;
+                        }
                         jobHist.phone = jobHistory.phone;
                         jobHist.position = jobHistory.position;
                         jobHist.reasonLeave = jobHistory.reason_for_leaving;
