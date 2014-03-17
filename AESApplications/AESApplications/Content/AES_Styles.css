@@ -1,212 +1,168 @@
 ﻿/* Shared styles */
 
 .box-shadow {
-
     -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-       -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-
+    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 }
 
-div.generic-container {
-
+div.blue-container {
     background-color: #3790db;
-    margin: 10px auto 20px auto;
-    width: 50vw;
-
+    margin: 10px auto 10px auto;
 }
 
-.background-orange { background-color: #e08e2a; }
-.background-blue { background-color: #3790db; }
-.background-dark-blue { background-color: #296ca5; }
-.text-shadow { text-shadow: 0px 0px 10px #000000; }
+.background-button {
+    background-color: #e08e2a;
+}
+
+.background-blue {
+    background-color: #3790db;
+}
+
+.background-header-footer {
+    background-color: #296ca5;
+}
+
+.background-nav {
+    background-color: #a9c4db;
+}
+
+.text-shadow {
+    text-shadow: 0px 0px 10px #000000;
+}
 
 /* Page layout */
 
-div#container {
-
-               display: table;
-                margin: 0 auto;
-            min-height: 96vh;
-                 width: 80vw;
-         border-radius: 10px;
-                border: 5px solid #3790db;
-      background-color: white;
-
+div.container {
+    display: table;
+    margin: 0 auto;
+    min-height: 96vh;
+    width: 80vw;
+    border-radius: 10px;
+    border: 5px solid #3790db;
+    background-color: white;
 }
 
-div#header {
-
-               display: table-row;
-                 color: white;
-      background-color: #296ca5;
-        letter-spacing: -1.5px;
-             font-size: 150%;
-
+div.header {
+    color: white;
+    letter-spacing: -1.5px;
+    font-size: 150%;
+    padding: 20px;
 }
 
-div#content {
-
-               display: table-row;
-                height: 100%;
-
+div.content {
+    height: 100%;
+    vertical-align: middle;
 }
 
-div#navigation {
-
-               display: table-row;
-                height: 80px;
-      background-color: #a9c4db;
-
+div.navigation {
+    height: 80px;
 }
 
-div#footer {
-
-               display: table-row;
-	  background-color: #296ca5;
-            text-align: center;
-                 color: white
-
+div.footer {
+    padding: 20px;
+    text-align: center;
+    color: white;
 }
 
 /* Page elements. */
 
 div.content-header {
-
-                 color: #296ca5;
-             font-size: 235%;
-                 width: 70%;
-                margin: 0 auto 40px auto;
-                height: 10px;
-        padding-bottom: 40px;
-         border-bottom: 4px solid #e08e2a;
-
+    color: #296ca5;
+    font-size: 235%;
+    padding-bottom: 10px;
+    margin: 0 60px 40px 60px;
+    border-bottom: 4px solid #e08e2a;
 }
 
 div.content-subheader {
-
-                 color: gray;
-             font-size: 200%;
-
+    color: gray;
+    font-size: 200%;
 }
 
 input[type=submit], input[type=button] {
-
-      background-color: #e08e2a;
-         border-radius: 10px;
-                height: 40px;
-               padding: 0 20px 0 20px;
-                 color: white;
-       text-decoration: none;
-             font-size: large;
-               outline: none;
-                border: none;
-            margin-top: 40px;
-
+    background-color: #e08e2a;
+    border-radius: 10px;
+    height: 40px;
+    padding: 0 20px 0 20px;
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    outline: none;
+    border: none;
+    margin-top: 40px;
 }
 
-input[type=submit]:hover, input[type=button]:hover {
-
-      background-color: #296ca5;
-
-}
+    input[type=submit]:hover, input[type=button]:hover {
+        background-color: #296ca5;
+    }
 
 input[type=checkbox] {
-
-                height: 25px;
-                 width: 25px;
-
+    height: 25px;
+    width: 25px;
 }
 
 #storeid-textfield {
-
-                 color: #e08e2a;
-                height: 30px;
-               padding: 0 20px 0 20px;
-         border-radius: 10px;
-                border: 5px solid #e08e2a;
-            text-align: center;
-             font-size: large;
-
+    color: #e08e2a;
+    height: 30px;
+    padding: 0 20px 0 20px;
+    border-radius: 10px;
+    border: 5px solid #e08e2a;
+    text-align: center;
+    font-size: large;
 }
 
 /* Local Jobs View */
 
-div#position-container {
-
-               display: table;
-      background-color: #3790db;
-                margin: 20px auto;
-
+div.position-container {
+    background-color: #3790db;
+    padding: 5px;
+    margin: 20px auto;
+    width: 95%;
 }
 
-div#position-container:hover {
-
-      background-color: #3fa2f6;
-
+div.position-container:hover {
+    background-color: #3fa2f6;
 }
 
 div.position-toggleable {
-
-               padding: 5px;
-                 width: 60vw;
-               display: table-cell;
-        vertical-align: middle;
-
-}
-
-div.position-detail-title {
-
-               display: table-cell;
-            text-align: right;
-               padding: 0 10px 0 10px;
-                 width: 150px;
-                 color: white;
-             font-size: 1.25em;
-
-}
-
-div.position-detail-content {
-
-               display: table-cell;
-            text-align: left;
-                 width: 100vw;
-               padding: 10px;
-      background-color: white;
-                 color: gray;
-
+    vertical-align: top;
 }
 
 div.position-detail-partial-title {
-
-               display: table-cell;
-                 color: white;
-             font-size: 1.25em;
-                 width: 500px;
-               padding: 0 5px 5px 5px;
-            text-align: left;
-
+    color: white;
+    font-size: 1.25em;
+    height: 25px;
+    padding: 0 5px 0 5px;
+    text-align: left;
 }
 
 div.position-detail-partial-content {
+    background-color: white;
+    text-align: left;
+    padding: 5px;
+}
 
-               display: table-cell;
-      background-color: white;
-                 color: gray;
-            text-align: left;
-               padding: 5px;
+div.position-detail-title {
+    text-align: right;
+    padding: 0 10px 0 10px;
+    width: 150px;
+    color: white;
+    font-size: 1.25em;
+}
 
+div.position-detail-content {
+    text-align: left;
+    padding: 10px;
+    background-color: white;
 }
 
 div.position-apply {
-
-               display: table-cell;
-               padding: 10px;
-                 width: 80px;
-      background-color: #00b85c;
-             font-size: 1.25em;
-                 color: white;
-
+    padding: 10px;
+    width: 80px;
+    background-color: #00b85c;
+    font-size: 1.25em;
+    color: white;
 }
 
 /* End Local Jobs View */
@@ -214,54 +170,44 @@ div.position-apply {
 /* Begin Personal Info View */
 
 div#form-container {
-
-               display: table;
-               width: inherit;
-                margin: 0 auto;
-      background-color: #3790db;
-
+    display: table;
+    width: inherit;
+    margin: 0 auto;
+    background-color: #3790db;
 }
 
 div.form-title {
-
-               display: table-cell;
-            text-align: right;
-               padding: 5px 5px 0 5px;
-        vertical-align: top;
-                 width: 250px;
-                 color: white;
-             font-size: 1.15em;
-
+    display: table-cell;
+    text-align: right;
+    padding: 5px 5px 0 5px;
+    vertical-align: top;
+    width: 250px;
+    color: white;
+    font-size: 1.15em;
 }
 
 div.form-content {
-
-               display: table-cell;
-            text-align: left;
-               padding: 5px;
-      background-color: white;
-                 color: gray;
-                 width: 500px;
-
+    display: table-cell;
+    text-align: left;
+    padding: 5px;
+    background-color: white;
+    color: gray;
+    width: 500px;
 }
 
 .field-input {
-
-             max-width: 95%;
-            border-top: none;
-           border-left: none;
-          border-right: none;
-      background-color: #F5F5F0;
-         border-bottom: 1px solid #a9c4db;
-              overflow: hidden;
-
+    max-width: 95%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: #F5F5F0;
+    border-bottom: 1px solid #a9c4db;
+    overflow: hidden;
 }
 
 div#validation {
-
-           line-height: 30px;
-                 color: red;
-
+    line-height: 30px;
+    color: red;
 }
 
 /* End Personal Info View */
@@ -269,34 +215,28 @@ div#validation {
 /* Begin Questionnaire View */
 
 div.question-container {
-
-               display: table;
-                margin: auto auto;
-               padding: 5px;
-                 width: 60vw;
-      background-color: #3790db;
-
+    display: table;
+    margin: auto auto;
+    padding: 5px;
+    width: 60vw;
+    background-color: #3790db;
 }
 
 div.question {
-
-               display: table-cell;
-            text-align: right;
-               padding: 5px 10px 5px 5px;
-                 width: 250px;
-                 color: white;
-             font-size: 1.15em;
-
+    display: table-cell;
+    text-align: right;
+    padding: 5px 10px 5px 5px;
+    width: 250px;
+    color: white;
+    font-size: 1.15em;
 }
 
 div.radio-button {
-
-               display: table-cell;
-            text-align: center;
-                 width: 30px;
-               padding: 5px;
-      background-color: white;
-
+    display: table-cell;
+    text-align: center;
+    width: 30px;
+    padding: 5px;
+    background-color: white;
 }
 
 /* End Questionnaire View */
@@ -304,39 +244,31 @@ div.radio-button {
 /* Begin Job History View */
 
 div.jobhistory-container {
-
-                      width: 60vw;
-                     margin: 0 auto;
-
+    width: 60vw;
+    margin: 0 auto;
 }
 
 div.jobhistory-tab {
-
-                     margin: 20px auto 0 auto;
-                    display: table;
-                      width: inherit;
-                      color: white;
-           background-color: #00b85c;
-                  font-size: 1.2em;
-
+    margin: 20px auto 0 auto;
+    display: table;
+    width: inherit;
+    color: white;
+    background-color: #00b85c;
+    font-size: 1.2em;
 }
 
 div.job-bottom-box {
-
-           background-color: #296ca5;
-                    padding: 10px;
-                line-height: 20px;
-                      color: white;
-                  font-size: 1.15em;
-                     border: 1px solid #296ca5;
-
+    background-color: #296ca5;
+    padding: 10px;
+    line-height: 20px;
+    color: white;
+    font-size: 1.15em;
+    border: 1px solid #296ca5;
 }
 
-div.job-bottom-box:hover {
-
-           background-color: #3280c2;
-                     border: 1px solid #3280c2;
-
-}
+    div.job-bottom-box:hover {
+        background-color: #3280c2;
+        border: 1px solid #3280c2;
+    }
 
 /* End Job History View */

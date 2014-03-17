@@ -13,24 +13,32 @@
 
 </head>
 
-<body style="background-color: gray">
+<body style="background-color: gray;">
 
-    <div id="container" class="box-shadow">
+    <div class="container box-shadow">
 
-        <div id="header">
-            <div style="margin: 20px;">A.E.S. Job Application Kiosk</div>
+        <div style="display: table-row;">
+            <div class="header text-shadow background-header-footer" style="display: table-cell">
+                A.E.S. Job Application Kiosk
+            </div>
         </div>
 
-        <div id="content">
-            <div style="margin: 20px; display: table-cell; vertical-align: middle;">@RenderBody()</div>
+        <div style="display: table-row;">
+            <div class="content" style="display: table-cell">
+                @RenderBody()
+            </div>
         </div>
 
-        <div id="navigation">
-            <div style="margin: 20px;">@Html.Partial("_NavigationPartial")</div>
+        <div style="display: table-row;">
+            <div class="navigation background-nav" style="display: table-cell">
+                @Html.Partial("_NavigationPartial")
+            </div>
         </div>
 
-        <div id="footer">
-            <div style="margin: 20px;">&copy; @DateTime.Now.Year - A.E.S. Incorporated</div>
+        <div style="display: table-row;">
+            <div class="footer background-header-footer" style="display: table-cell">
+                &copy; @DateTime.Now.Year - A.E.S. Incorporated
+            </div>
         </div>
 
     </div>

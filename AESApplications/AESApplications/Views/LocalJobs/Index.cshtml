@@ -17,44 +17,24 @@
 
         foreach (var job in Model)
         {
-            <div id="position-container" class="box-shadow">
+            <div class="position-container box-shadow" style="display: table;">
 
-                <div class="position-toggleable">
+                <div class="position-toggleable" style="display: table-cell;">
 
-                    <div class="position-brief">
+                    <div>
 
-                        <div style="display: table;">
+                        <div style="display: table; min-height: 80px; min-width: 100%;">
 
-                            <div style="display: table-row">
-
-                                <div class="position-detail-partial-title" style="width: 150px;">
-                                    Store Location
-                                </div>
-
-                                <div class="position-detail-partial-title" style="width: 150px;">
-                                    Job Title
-                                </div>
-
-                                <div class="position-detail-partial-title">
-                                    Description
-                                </div>
-
+                            <div style="display: table-row;">
+                                <div class="position-detail-partial-title" style="width: 150px; display: table-cell;">Store Location</div>
+                                <div class="position-detail-partial-title" style="width: 150px; display: table-cell;">Job Title</div>
+                                <div class="position-detail-partial-title">Description</div>
                             </div>
 
-                            <div style="display: table-row">
-
-                                <div class="position-detail-partial-content" style="width: 150px;">
-                                    @job.location
-                                </div>
-
-                                <div class="position-detail-partial-content" style="width: 150px;">
-                                    @job.title
-                                </div>
-
-                                <div class="position-detail-partial-content">
-                                    @job.description.Substring(0, job.description.Length < 100 ? job.description.Length : 100)...
-                                </div>
-
+                            <div style="display: table-row;">
+                                <div class="position-detail-partial-content" style="width: 150px; display: table-cell;">@job.location</div>
+                                <div class="position-detail-partial-content" style="width: 150px; display: table-cell;">@job.title</div>
+                                <div class="position-detail-partial-content" style="display: table-cell;">@job.description.Substring(0, job.description.Length < 50 ? job.description.Length : 50)...</div>
                             </div>
 
                         </div>
@@ -66,33 +46,28 @@
                         <div style="display: table;">
 
                             <div style="display: table-row;">
-                                <div class="position-detail-title">Store Location</div>
-                                <div class="position-detail-content">@job.location</div>
+                                <div class="position-detail-title" style="display: table-cell">Store Location</div>
+                                <div class="position-detail-content" style="display: table-cell">@job.location</div>
                             </div>
 
                             <div style="display: table-row;">
-                                <div class="position-detail-title">Job Title</div>
-                                <div class="position-detail-content">@job.title</div>
+                                <div class="position-detail-title" style="display: table-cell">Job Title</div>
+                                <div class="position-detail-content" style="display: table-cell">@job.title</div>
                             </div>
 
                             <div style="display: table-row;">
-                                <div class="position-detail-title">Description</div>
-                                <div class="position-detail-content">@job.description</div>
+                                <div class="position-detail-title" style="display: table-cell">Description</div>
+                                <div class="position-detail-content" style="display: table-cell">@job.description</div>
                             </div>
 
                             <div style="display: table-row;">
-                                <div class="position-detail-title">Hours</div>
-                                <div class="position-detail-content">@job.hours</div>
+                                <div class="position-detail-title" style="display: table-cell">Hours</div>
+                                <div class="position-detail-content" style="display: table-cell">@job.hours</div>
                             </div>
 
-                            <!--div style="display: table-row;">
-                                <div class="position-detail-title">Education</div>
-                                <div class="position-detail-content">@job.education</div>
-                            </div-->
-
                             <div style="display: table-row;">
-                                <div class="position-detail-title">Pay</div>
-                                <div class="position-detail-content">@job.pay</div>
+                                <div class="position-detail-title" style="display: table-cell">Pay</div>
+                                <div class="position-detail-content" style="display: table-cell">@job.pay</div>
                             </div>
 
                         </div>
@@ -101,13 +76,14 @@
 
                 </div>
 
-                <div class="position-apply text-shadow">
+                <div class="position-apply text-shadow box-shadow" style="display: table-cell;">
                     <input type="checkbox" id="@job.jobId" name="@job.jobId.ToString()" />
                     <br />
                     Add
                 </div>
 
             </div>
+
         }
 
         <input type="submit" value="Apply" />
@@ -115,13 +91,13 @@
 
     <script>
 
-      $('.position-toggleable')
-      .css('cursor', 'default')
-      .click(
-        function () {
-            $(this).children().slideToggle('fast');
-        }
-      )
+        $('.position-toggleable')
+        .css('cursor', 'default')
+        .click(
+          function () {
+              $(this).children().slideToggle('fast');
+          }
+        )
 
     </script>
 
