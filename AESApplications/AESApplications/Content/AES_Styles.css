@@ -8,7 +8,8 @@
 
 div.blue-container {
     background-color: #3790db;
-    margin: 10px auto 10px auto;
+    padding: 5px;
+    margin: 10px 60px 10px 60px;
 }
 
 .background-button {
@@ -169,7 +170,7 @@ div.position-apply {
 
 /* Begin Personal Info View */
 
-div#form-container {
+div.form-container {
     display: table;
     width: inherit;
     margin: 0 auto;
