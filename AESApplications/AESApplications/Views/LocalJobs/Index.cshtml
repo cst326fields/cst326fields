@@ -34,7 +34,7 @@
                             <div style="display: table-row;">
                                 <div class="position-detail-partial-content" style="width: 150px; display: table-cell;">@job.location</div>
                                 <div class="position-detail-partial-content" style="width: 150px; display: table-cell;">@job.title</div>
-                                <div class="position-detail-partial-content" style="display: table-cell;">@job.description.Substring(0, job.description.Length < 50 ? job.description.Length : 50)...</div>
+                                <div class="position-detail-partial-content" style="display: table-cell;">@job.description.Substring(0, job.description.Length < 125 ? job.description.Length : 125)...</div>
                             </div>
 
                         </div>
