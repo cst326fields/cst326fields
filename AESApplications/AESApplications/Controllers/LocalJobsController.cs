@@ -32,6 +32,7 @@ namespace AESApplications.Controllers
                     tempJob.title = job.jTitle;
                     tempJob.pay = job.jPay; //change field to pay???
                     //Service is mising store location as a field.. theres no way to retrieve it with current methods / lack of store id for job
+                    tempJob.location = job.jLocation;   //Here it is as you requested!!!!
                     jobs.Add(tempJob);
                 }
                 client.Close();

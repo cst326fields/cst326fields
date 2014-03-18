@@ -46,10 +46,13 @@ namespace AESApplications.Controllers
         public ActionResult CheckQuestions(List<FakeQuestion> questionnair)
         {
             bool questionFailed = false;
-            foreach (var question in questionnair)
+            if (questionnair != null)
             {
-                if (question.correctAnswer[0] != question.response[0])
-                    questionFailed = true;
+                foreach (var question in questionnair)
+                {
+                    if (question.correctAnswer[0] != question.response[0])
+                        questionFailed = true;
+                }
             }
             if (questionFailed) {
                 return RedirectToAction("Fail", "Questionnaire"); 

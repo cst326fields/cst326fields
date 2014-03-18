@@ -13,6 +13,8 @@ namespace AESApplications.Models
         [Display(Name = "Years attended")]
         public string years_attended { get; set; }
         [Display(Name = "Graduated(y/n)")]
+        [StringLength(1)]
+        [RegularExpression(@"[yYnN]", ErrorMessage = "Must be y or n")]
         public string graduated { get; set; }
         [Display(Name = "Degree/Major")]
         public string degree { get; set; }

@@ -16,11 +16,16 @@ namespace WcfService1
 
             using (AESDatabaseEntities context = new AESDatabaseEntities())
             {
+                var location = (from l in context.Stores where storeId == l.storeId select l).First<Store>();   //To get the store city related to the storeID passed in.
+
+                string cityState = new StringBuilder(location.city + ", " + location.stateAbbreviation).ToString();
+                
                 var city = (from c in context.AvailablePositions where storeId == c.storeId select c);
 
                 foreach (var p in city)
                 {
                     var temp = new Job();
+                    temp.jLocation = cityState;     //Added this for store city
                     temp.jTitle = p.Position.title;
                     temp.jDescription = p.Position.description;
                     temp.jPay = p.Position.pay;
@@ -129,11 +134,12 @@ namespace WcfService1
 
             foreach (var education in educations)
             {
-                if (education != null)
+                if (education.nameAddress != null)
                 {
                     Education temp = new Education();
                     temp.applicantId = education.applicantId;
                     temp.degreeMajor = education.degreeMajor;
+                    temp.yearsAttended = education.yearsAttended;   //Added this to add the years attended
                     temp.graduated = education.graduated;
                     temp.nameAddress = education.nameAddress;
 
@@ -165,7 +171,7 @@ namespace WcfService1
 
             foreach (var jobHistory in jobHistorys)
             {
-                if (jobHistory != null)
+                if (jobHistory.employer != null)
                 {
                     JobHistory temp = new JobHistory();
                     temp.applicantId = jobHistory.applicantId;
@@ -209,7 +215,7 @@ namespace WcfService1
 
             foreach(var reference in references)
             {
-                if (reference != null)
+                if (reference.name != null)
                 {
                     Reference temp = new Reference();
                     temp.applicantId = reference.applicantId;
