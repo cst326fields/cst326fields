@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AppService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:43518/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:43518/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:43518/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService1" />
+      <xsd:import schemaLocation="http://localhost:43518/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAppService_getJobs_InputMessage">
+    <wsdl:part name="parameters" element="tns:getJobs" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_getJobs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getJobsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_getStoreInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getStoreInfo" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_getStoreInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getStoreInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_getQuestions_InputMessage">
+    <wsdl:part name="parameters" element="tns:getQuestions" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_getQuestions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_storePersonalInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:storePersonalInfo" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_storePersonalInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:storePersonalInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_storeEducations_InputMessage">
+    <wsdl:part name="parameters" element="tns:storeEducations" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_storeEducations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:storeEducationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_storeJobHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:storeJobHistory" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_storeJobHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:storeJobHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_storeReferences_InputMessage">
+    <wsdl:part name="parameters" element="tns:storeReferences" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_storeReferences_OutputMessage">
+    <wsdl:part name="parameters" element="tns:storeReferencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_storeElectronicSig_InputMessage">
+    <wsdl:part name="parameters" element="tns:storeElectronicSig" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_storeElectronicSig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:storeElectronicSigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_getApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:getApplication" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_getApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getApplicationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAppService">
+    <wsdl:operation name="getJobs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/getJobs" message="tns:IAppService_getJobs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/getJobsResponse" message="tns:IAppService_getJobs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getStoreInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/getStoreInfo" message="tns:IAppService_getStoreInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/getStoreInfoResponse" message="tns:IAppService_getStoreInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuestions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/getQuestions" message="tns:IAppService_getQuestions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/getQuestionsResponse" message="tns:IAppService_getQuestions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="storePersonalInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/storePersonalInfo" message="tns:IAppService_storePersonalInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/storePersonalInfoResponse" message="tns:IAppService_storePersonalInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="storeEducations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/storeEducations" message="tns:IAppService_storeEducations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/storeEducationsResponse" message="tns:IAppService_storeEducations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="storeJobHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/storeJobHistory" message="tns:IAppService_storeJobHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/storeJobHistoryResponse" message="tns:IAppService_storeJobHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="storeReferences">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/storeReferences" message="tns:IAppService_storeReferences_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/storeReferencesResponse" message="tns:IAppService_storeReferences_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="storeElectronicSig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/storeElectronicSig" message="tns:IAppService_storeElectronicSig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/storeElectronicSigResponse" message="tns:IAppService_storeElectronicSig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getApplication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/getApplication" message="tns:IAppService_getApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/getApplicationResponse" message="tns:IAppService_getApplication_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAppService" type="tns:IAppService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getJobs">
+      <soap:operation soapAction="http://tempuri.org/IAppService/getJobs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStoreInfo">
+      <soap:operation soapAction="http://tempuri.org/IAppService/getStoreInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuestions">
+      <soap:operation soapAction="http://tempuri.org/IAppService/getQuestions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="storePersonalInfo">
+      <soap:operation soapAction="http://tempuri.org/IAppService/storePersonalInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="storeEducations">
+      <soap:operation soapAction="http://tempuri.org/IAppService/storeEducations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="storeJobHistory">
+      <soap:operation soapAction="http://tempuri.org/IAppService/storeJobHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="storeReferences">
+      <soap:operation soapAction="http://tempuri.org/IAppService/storeReferences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="storeElectronicSig">
+      <soap:operation soapAction="http://tempuri.org/IAppService/storeElectronicSig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApplication">
+      <soap:operation soapAction="http://tempuri.org/IAppService/getApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AppService">
+    <wsdl:port name="BasicHttpBinding_IAppService" binding="tns:BasicHttpBinding_IAppService">
+      <soap:address location="http://localhost:43518/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

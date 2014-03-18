@@ -78,6 +78,8 @@ namespace WcfService1
     public class Job
     {
         [DataMember]
+        public string jLocation { get; set; }
+        [DataMember]
         public string jTitle { get; set; }
         [DataMember]
         public string jDescription { get; set; }
@@ -105,6 +107,41 @@ namespace WcfService1
         [DataMember]
         public ElectronicSig electronicSig { get; set; }
     }
+
+    //[DataContract]
+    //public partial class JobHistory
+    //{
+    //    [DataMember]
+    //    public string jemployer { get; set; }
+    //    [DataMember]
+    //    public DateTime jfrom { get; set; }
+    //    [DataMember]
+    //    public DateTime jto { get; set; }
+    //    [DataMember]
+    //    public string jstreet { get; set; }
+    //    [DataMember]
+    //    public string jcity { get; set; }
+    //    [DataMember]
+    //    public string jstate { get; set; }
+    //    [DataMember]
+    //    public string jzip { get; set; }
+    //    [DataMember]
+    //    public string jphone { get; set; }
+    //    [DataMember]
+    //    public string jsupervisor { get; set; }
+    //    [DataMember]
+    //    public string jposition { get; set; }
+    //    [DataMember]
+    //    public int japplicantId { get; set; }
+    //    [DataMember]
+    //    public string jduties { get; set; }
+    //    [DataMember]
+    //    public string jstartSalary { get; set; }
+    //    [DataMember]
+    //    public string jendSalary { get; set; }
+    //    [DataMember]
+    //    public string jreasonLeave { get; set; }
+    //}
         
     //For all the other DataContracts, look inside 'applicant.tt' under 'Applicant.edmx'
     //They were auto generated from entity framework.
